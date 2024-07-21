@@ -45,8 +45,64 @@
     margin: 20px 0;
 }
 
-.progress {
-    width: 24.99%; /* 3/12 */
+.progress4 {
+    width: 33.32%;
+    height: 8px;
+    background-color: #F3AF81;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+}
+
+.progress5 {
+    width: 41.65%; /* 5/12 */
+    height: 8px;
+    background-color: #F3AF81;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+}
+
+.progress6 {
+    width: 49.98%; /* 5/12 */
+    height: 8px;
+    background-color: #F3AF81;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+}
+
+.progress7 {
+    width: 58.31%; /* 5/12 */
+    height: 8px;
+    background-color: #F3AF81;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+}
+
+.progress8 {
+    width: 66.64%; /* 5/12 */
+    height: 8px;
+    background-color: #F3AF81;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+}
+
+.progress9 {
+    width: 74.97%; /* 5/12 */
+    height: 8px;
+    background-color: #F3AF81;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+}
+
+.progress10 {
+    width: 83.30%; /* 5/12 */
+    height: 8px;
+    background-color: #F3AF81;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+}
+
+.progress11 {
+    width: 91.63%; /* 5/12 */
     height: 8px;
     background-color: #F3AF81;
     border-radius: 10px;
@@ -61,53 +117,40 @@
 }
 
 .introTitle {
+    height: 56px;
     font-size: 20px;
     text-align: center;
     margin-bottom: 20px;
     font-family: 'Pretendard JP', sans-serif;
 }
 
-.dropdownContainer {
+.optionsContainer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     margin-bottom: 30px;
 }
 
-.dropdown {
-    width: 30%;
+.optionBtn {
+    width: 194px;
     height: 48px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    border: none;
+    border-radius: 50px;
     background-color: #F5F5F5;
     color: #111111;
     font-size: 16px;
-    padding: 0 15px;
-    box-sizing: border-box;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-align-last: center;
     cursor: pointer;
-    position: relative;
-    margin: 0 5px;
+    margin-bottom: 20px;
+    /*transition-duration: 0.3s;*/
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-/* 드롭다운 화살표 아이콘 스타일링 */
-.dropdown::after {
-    content: '▼';
-    font-size: 12px;
-    color: #999;
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    pointer-events: none;
-    transform: translateY(-50%);
-}
-
-/* 드롭다운 옵션 스타일 */
-.dropdown option {
-    padding: 10px;
+.optionBtn.active {
+    background-color: #FDEFE6;
+    color: #111111;
+    border: 1px solid #F3AF81;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .btnInactive {

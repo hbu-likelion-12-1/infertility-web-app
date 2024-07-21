@@ -45,8 +45,8 @@
     margin: 20px 0;
 }
 
-.progress {
-    width: 24.99%; /* 3/12 */
+.progress11 {
+    width: 91.63%; /* 11/12 */
     height: 8px;
     background-color: #F3AF81;
     border-radius: 10px;
@@ -57,7 +57,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    width: 100%;
 }
 
 .introTitle {
@@ -67,47 +67,49 @@
     font-family: 'Pretendard JP', sans-serif;
 }
 
-.dropdownContainer {
+.optionsContainer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     margin-bottom: 30px;
 }
 
-.dropdown {
-    width: 30%;
-    height: 48px;
+.surveyTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: 'Pretendard JP', sans-serif;
+}
+
+.surveyTable th, .surveyTable td {
     border: 1px solid #ddd;
-    border-radius: 10px;
+    padding: 8px;
+}
+
+.surveyTable th {
+    font-size: 20px;
+    background-color: #f2f2f2;
+}
+
+.optionBtn {
+    width: 194px;
+    height: 48px;
+    border: none;
+    border-radius: 50px;
     background-color: #F5F5F5;
     color: #111111;
     font-size: 16px;
-    padding: 0 15px;
-    box-sizing: border-box;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-align-last: center;
     cursor: pointer;
-    position: relative;
-    margin: 0 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-/* 드롭다운 화살표 아이콘 스타일링 */
-.dropdown::after {
-    content: '▼';
-    font-size: 12px;
-    color: #999;
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    pointer-events: none;
-    transform: translateY(-50%);
-}
-
-/* 드롭다운 옵션 스타일 */
-.dropdown option {
-    padding: 10px;
+.optionBtn.active {
+    background-color: #FDEFE6;
+    color: #111111;
+    border: 1px solid #F3AF81;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .btnInactive {
@@ -134,4 +136,37 @@
     cursor: pointer;
     transition-duration: 0.3s;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Media Queries for Mobile Screens */
+@media (max-width: 768px) {
+    .introTitle {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .surveyTable th, .surveyTable td {
+        padding: 6px;
+    }
+
+    .surveyTable th {
+        font-size: 15px;
+        background-color: #f2f2f2;
+    }
+
+    .surveyTable td {
+        font-size: 13px;
+    }
+
+    .optionBtn {
+        width: 150px;
+        height: 40px;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .btnInactive, .btnActive {
+        height: 48px;
+        font-size: 14px;
+    }
 }
