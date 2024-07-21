@@ -12,7 +12,7 @@ const SurveyStep5: React.FC = () => {
 
     const handleNextClick = () => {
         if (selectedOption) {
-            navigate('/survey/step11'); // 다음 단계로 이동하는 로직 추가
+            navigate('/survey/depression'); // 다음 단계로 이동하는 로직 추가
         }
     };
 
@@ -24,10 +24,10 @@ const SurveyStep5: React.FC = () => {
                 <div className={styles.closeIcon} onClick={() => navigate('/')}></div>
             </div>
             <div className={styles.progressBar}>
-                <div className={styles.progress10}></div>
+                <div className={styles.progress9}></div>
             </div>
             <div className={styles.content}>
-                <h1 className={styles.introTitle}>부부 간 난임 문제에 대한<br/>의사소통 빈도를 선택해주세요.</h1>
+                <h1 className={styles.introTitle}>부부 간의 난임 문제에 대한<br/>의사소통 빈도를 선택해주세요.</h1>
                 <div className={styles.optionsContainer}>
                     <button
                         className={`${styles.optionBtn} ${selectedOption === '매일' ? styles.active : ''}`}

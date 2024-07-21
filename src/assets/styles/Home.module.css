@@ -1,19 +1,160 @@
-.home {
-    text-align: center;
-    padding: 20px;
+/* src/assets/styles/Home.module.css */
+.homePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
 }
 
-/* 모바일 크기 기준 스타일 */
-@media (max-width: 640px) {
-    .home {
-        padding: 10px;
-    }
+.header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    background-color: #FFF3E6;
+}
 
-    h1 {
-        font-size: 24px;
-    }
+.logo {
+    width: 120px;
+    height: 40px;
+    background: url('../../assets/images/logo2.svg') no-repeat center center;
+    background-size: contain;
+}
 
-    p {
-        font-size: 14px;
-    }
+.mainContent {
+    flex: 1;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.messageCard {
+    background-color: #FFE5D1;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.messageTitle {
+    font-weight: bold;
+}
+
+.shareSection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.shareOption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #DDD;
+}
+
+.shareOption button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #FF5733;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.shareIcon {
+    width: 20px;
+    height: 20px;
+    background: url('../../assets/icons/share.svg') no-repeat center center;
+    background-size: contain;
+    margin-left: 10px;
+}
+
+.messageSection {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.messageOptions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.messageOptions button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    text-align: center;
+}
+
+.audioIcon {
+    width: 40px;
+    height: 40px;
+    background: url('../../assets/icons/audio.svg') no-repeat center center;
+    background-size: contain;
+    margin-bottom: 5px;
+}
+
+.recordIcon {
+    width: 40px;
+    height: 40px;
+    background: url('../../assets/icons/record.svg') no-repeat center center;
+    background-size: contain;
+    margin-bottom: 5px;
+}
+
+.sendIcon {
+    width: 40px;
+    height: 40px;
+    background: url('../../assets/icons/send.svg') no-repeat center center;
+    background-size: contain;
+    margin-bottom: 5px;
+}
+
+.tabBar {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #FFF3E6;
+}
+
+.tabBar button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.homeIcon {
+    width: 30px;
+    height: 30px;
+    background: url('../../assets/icons/home.svg') no-repeat center center;
+    background-size: contain;
+}
+
+.aiBloomIcon {
+    width: 30px;
+    height: 30px;
+    background: url('../../assets/icons/ai_bloom.svg') no-repeat center center;
+    background-size: contain;
+}
+
+.saveIcon {
+    width: 30px;
+    height: 30px;
+    background: url('../../assets/icons/save.svg') no-repeat center center;
+    background-size: contain;
 }

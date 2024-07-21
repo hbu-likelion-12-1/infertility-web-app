@@ -1,42 +1,50 @@
-/* src/assets/styles/Navbar.module.css */
 .navbar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    background-color: #fff;
-    border-top: 1px solid #ddd;
-    height: 60px;
-    position: fixed;
+    justify-content: space-around;
     width: 100%;
+    padding: 10px 0;
+    background-color: #FFF3E6;
+    position: fixed;
     bottom: 0;
     left: 0;
+    right: 0;
 }
 
-.logo a {
-    font-size: 24px;
-    color: #ff6347;
-    text-decoration: none;
-}
-
-.navLinks {
-    list-style: none;
+.navbar .icon {
     display: flex;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #111111;
 }
 
-.navLinks li {
-    display: inline;
+.navbar .label {
+    margin-top: 5px;
+    font-size: 12px;
 }
 
-.navLinks a {
-    font-size: 18px;
-    color: #333;
-    text-decoration: none;
+.icon {
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 5px;
 }
 
-.navLinks a:hover {
-    color: #ff6347;
+.homeIcon {
+    background-image: url('../../assets/icon/nav/home.svg');
+}
+
+.bloomIcon {
+    background-image: url('../../assets/icon/nav/flower.svg');
+}
+
+.saveIcon {
+    background-image: url('../../assets/icon/nav/box.svg');
+}
+
+.activeIcon {
+    filter: brightness(0) saturate(100%) invert(62%) sepia(48%) saturate(495%) hue-rotate(334deg) brightness(92%) contrast(89%);
 }

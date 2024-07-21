@@ -20,6 +20,7 @@
     height: 40px;
     background: url('../../images/logo2.svg') no-repeat center center;
     background-size: contain;
+    margin-left: 20px;
 }
 
 .backIcon {
@@ -46,7 +47,7 @@
 }
 
 .progress11 {
-    width: 91.63%; /* 11/12 */
+    width: 91.65%; /* 11/12 */
     height: 8px;
     background-color: #F3AF81;
     border-radius: 10px;
@@ -68,41 +69,39 @@
 }
 
 .optionsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+    width: 90%;
     margin-bottom: 30px;
 }
 
-.surveyTable {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
+.questionContainer {
+    margin-bottom: 30px;
+}
+
+.questionText {
+    margin-bottom: 10px;
+    font-size: 14px;
     font-family: 'Pretendard JP', sans-serif;
 }
 
-.surveyTable th, .surveyTable td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-.surveyTable th {
-    font-size: 20px;
-    background-color: #f2f2f2;
+.options {
+    display: flex;
+    justify-content: space-between;
 }
 
 .optionBtn {
-    width: 194px;
-    height: 48px;
-    border: none;
-    border-radius: 50px;
-    background-color: #F5F5F5;
+    flex: 1;
+    height: 40px;
+    border: 1px solid #E0E0E2;
+    border-radius: 15px;
+    background-color: #ffffff;
     color: #111111;
-    font-size: 16px;
+    font-size: 12px;
+    margin: 0 3px 0 3px;
     cursor: pointer;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition-duration: 0.3s;
+    text-align: center;
+    padding: 0;
+
 }
 
 .optionBtn.active {
@@ -122,6 +121,7 @@
     font-size: 16px;
     cursor: not-allowed;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 50px;
 }
 
 .btnActive {
@@ -136,37 +136,4 @@
     cursor: pointer;
     transition-duration: 0.3s;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-/* Media Queries for Mobile Screens */
-@media (max-width: 768px) {
-    .introTitle {
-        font-size: 16px;
-        margin-bottom: 15px;
-    }
-
-    .surveyTable th, .surveyTable td {
-        padding: 6px;
-    }
-
-    .surveyTable th {
-        font-size: 15px;
-        background-color: #f2f2f2;
-    }
-
-    .surveyTable td {
-        font-size: 13px;
-    }
-
-    .optionBtn {
-        width: 150px;
-        height: 40px;
-        font-size: 14px;
-        margin-bottom: 15px;
-    }
-
-    .btnInactive, .btnActive {
-        height: 48px;
-        font-size: 14px;
-    }
 }

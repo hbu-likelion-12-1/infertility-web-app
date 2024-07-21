@@ -20,6 +20,7 @@
     height: 40px;
     background: url('../../images/logo2.svg') no-repeat center center;
     background-size: contain;
+    margin-left: 20px;
 }
 
 .backIcon {

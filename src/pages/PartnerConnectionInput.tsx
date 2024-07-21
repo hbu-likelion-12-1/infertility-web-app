@@ -10,6 +10,7 @@ const PartnerConnectionInput: React.FC = () => {
         if (code) {
             // logic to connect with the partner's code
             alert('코드가 연결되었습니다.');
+            navigate('/home');
         }
     };
 
