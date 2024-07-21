@@ -10,20 +10,21 @@ import SurveyStep7 from "./pages/Survey/SurveyStep7";
 import SurveyStep8 from "./pages/Survey/SurveyStep8";
 import SurveyStep9 from "./pages/Survey/SurveyStep9";
 import SurveyStep10 from "./pages/Survey/SurveyStep10";
-import SurveyStep11 from "./pages/Survey/SurveyStepDepression.tsx";
+import SurveyStep11 from "./pages/Survey/SurveyStepDepression";
 import SurveyCompletion from './pages/Survey/SurveyCompletion';
 import Result from './pages/Result';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import Navbar from './components/layout/Navbar';
-// import Footer from './components/common/Footer';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
-import SurveyResults from './pages/Survey/SurveyResults.tsx';
+import SurveyResults from './pages/Survey/SurveyResults';
 import UserSettings from './pages/UserSettings';
 import Splash from './pages/Splash';
 import Onboarding from './pages/Onboarding';
+import PartnerConnectionShare from "./pages/PartnerConnectionShare";
+import PartnerConnectionInput from "./pages/PartnerConnectionInput";
 
 
 const AppLayout = () => {
@@ -45,6 +46,8 @@ const AppLayout = () => {
         '/survey/step9',
         '/survey/step10',
         '/survey/completion',
+        '/partner',
+        '/partner/connection-input',
     ];
     const shouldHideNavbar = hideNavbarPaths.includes(location.pathname);
 
@@ -75,8 +78,9 @@ const AppLayout = () => {
                 <Route path="/result" element={<Result/>}/>
                 <Route path="/profile" element={<Profile/>}/>
                 <Route path="/settings" element={<Settings/>}/>
+                <Route path="/partner" element={<PartnerConnectionShare/>}/>
+                <Route path="/partner/connection-input" element={<PartnerConnectionInput/>}/>
             </Routes>
-            {/*{!shouldHideNavbar && <Footer />}*/}
         </>
     );
 }

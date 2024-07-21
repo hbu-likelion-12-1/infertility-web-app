@@ -25,7 +25,7 @@
 .backIcon {
     width: 11px;
     height: 19px;
-    background: url('../../icon/<.svg') no-repeat center center;
+    background: url('../../icon/side.svg') no-repeat center center;
     background-size: contain;
     cursor: pointer;
 }
