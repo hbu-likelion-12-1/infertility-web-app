@@ -1,0 +1,124 @@
+.introPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.appBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.logo {
+    width: 100px;
+    height: 40px;
+    background: url('../../images/logo2.svg') no-repeat center center;
+    background-size: contain;
+}
+
+.backIcon {
+    width: 11px;
+    height: 19px;
+    background: url('../../icon/<.svg') no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.closeIcon {
+    width: 19px;
+    height: 19px;
+    background: url('../../icon/x.svg') no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.progressBar {
+    width: 100%;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.progress {
+    width: 8.33%;
+    height: 8px;
+    background-color: #F3AF81;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.introTitle {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Pretendard JP', sans-serif;
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+
+.inputField {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.inputField::placeholder {
+    color: #ccc;
+}
+
+.charCount {
+    width: 10px;
+    margin-left:10px;
+    font-size: 14px;
+    color: #999;
+
+}
+
+.btnInactive {
+    width: 100%;
+    height: 56px;
+    border: none;
+    border-radius: 15px;
+    background-color: #FDEFE6;
+    color: #111111;
+    font-size: 16px;
+    cursor: not-allowed;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+
+}
+
+.btnActive {
+    width: 100%;
+    height: 56px;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    background-color: #F3AF81;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
