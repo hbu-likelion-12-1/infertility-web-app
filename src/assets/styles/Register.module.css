@@ -1,0 +1,17 @@
+.registerPage {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

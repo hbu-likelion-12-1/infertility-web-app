@@ -1,0 +1,19 @@
+.home {
+    text-align: center;
+    padding: 20px;
+}
+
+/* 모바일 크기 기준 스타일 */
+@media (max-width: 640px) {
+    .home {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
