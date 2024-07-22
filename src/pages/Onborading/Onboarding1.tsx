@@ -6,7 +6,7 @@ const Onboarding1: React.FC = () => {
     const navigate = useNavigate();
     return (
         <div className={styles.onboardingContainer}>
-            <div className={`${styles.image} ${styles.logo}`}></div>
+            <div className={`${styles.backgroundImage}`} style={{ backgroundImage: "url('../../assets/images/logo.svg')" }}></div>
             <div className={styles.textContainer}>
                 <h1 className={styles.title}>안녕하세요!</h1>
                 <p className={styles.subtitle}>AI 기반의 나의 맞춤형 마음 공유 서비스</p>
