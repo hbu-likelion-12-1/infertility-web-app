@@ -2,41 +2,109 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     height: 100vh;
-    padding: 20px;
+    padding: 0;
     box-sizing: border-box;
-    background-color: #FFF3E6;
     text-align: center;
     font-family: 'Pretendard JP', sans-serif;
     position: relative;
+    overflow: hidden;
 }
 
-.backgroundImage {
+.backgroundImage1 {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
+    background-size: contain; /* 이미지를 전체 보이도록 조정 */
+    background-repeat: no-repeat;
+    bottom: 50%; /* 절반 정도 차지 */
     background-position: center;
-    z-index: -1;
+    height: 303px; /* 이미지 크기를 줄임 */
+    width: 210px; /* 이미지 크기를 줄임 */
+    margin-top: 30px;
 }
+
+.backgroundImage2 {
+    position: absolute;
+    background-size: contain; /* 이미지를 전체 보이도록 조정 */
+    background-repeat: no-repeat;
+    bottom: 20%; /* 절반 정도 차지 */
+    background-position: center;
+    height: 618px; /* 이미지 크기를 줄임 */
+    width: 341px; /* 이미지 크기를 줄임 */
+    margin-top: 30px;
+}
+
+.backgroundImage3 {
+    position: absolute;
+    background-size: contain; /* 이미지를 전체 보이도록 조정 */
+    background-repeat: no-repeat;
+    bottom: 20%; /* 절반 정도 차지 */
+    background-position: center;
+    height: 618px; /* 이미지 크기를 줄임 */
+    width: 341px; /* 이미지 크기를 줄임 */
+    margin-top: 30px;
+}
+
+.backgroundImage4 {
+    position: absolute;
+    background-size: contain; /* 이미지를 전체 보이도록 조정 */
+    background-repeat: no-repeat;
+    bottom: 50%; /* 절반 정도 차지 */
+    background-position: center;
+    height: 243px; /* 이미지 크기를 줄임 */
+    width: 315px; /* 이미지 크기를 줄임 */
+    margin-top: 30px;
+}
+
 
 .textContainer {
-    flex: 1;
+    width: 100%;
+    height: 380px;
+    background: rgba(255, 255, 255);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-top: 20%;
-    z-index: 1;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+p {
+    margin: 0;
 }
 
-.title {
-    font-size: 24px;
+.intro1 {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #000000;
+    line-height: 140%;
+
+}
+.intro2 {
+    font-size: 20px;
+    color: #F3AF81;
+    line-height: 140%;
+    margin-bottom: 20px;
+}
+
+
+
+.title1 {
+    font-size: 26px;
     font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
+    line-height: 140%;
+
+}
+.title2 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #F3AF81;
+    margin-bottom: 20px;
+    line-height: 140%;
 }
 
 .subtitle {
@@ -60,13 +128,14 @@
     border-radius: 25px;
     font-size: 16px;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin: 40px auto 20px auto;
 }
 
 .pagination {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+
+    margin: auto 20px 0 20px;
 }
 
 .paginationDot {
