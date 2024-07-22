@@ -1,22 +1,91 @@
-.onboarding {
+.onboardingContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     height: 100vh;
-    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #FFF3E6;
     text-align: center;
+    font-family: 'Pretendard JP', sans-serif;
 }
 
-.content {
+.image {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+}
+
+.logo {
+    background-image: url('../../assets/images/logo.svg');
+}
+
+.onboardImage2 {
+    background-image: url('../../assets/images/Onboard2.svg');
+}
+
+.onboardImage3 {
+    background-image: url('../../assets/images/Onboard3.svg');
+}
+
+.onboardImage4 {
+    background-image: url('../../assets/images/Onboard4.svg');
+}
+
+.textContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #555;
     margin-bottom: 20px;
 }
 
-.startButton {
-    background-color: #ffa500;
-    color: #fff;
-    padding: 10px 20px;
+.description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #777;
+}
+
+.button {
+    width: 80%;
+    padding: 15px;
+    background-color: #F3AF81;
+    color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
+    font-size: 16px;
     cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.paginationDot {
+    width: 10px;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.paginationDot.active {
+    background-color: #F3AF81;
 }

@@ -7,7 +7,7 @@ const Splash: React.FC = () => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            navigate('/onboarding');
+            navigate('/onboarding1');
         }, 3000);
 
         return () => clearTimeout(timer);
