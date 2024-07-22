@@ -24,7 +24,7 @@ const SurveyStep5: React.FC = () => {
                 <div className={styles.closeIcon} onClick={() => navigate('/')}></div>
             </div>
             <div className={styles.progressBar}>
-                <div className={styles.progress9}></div>
+                <div className={styles.progress10}></div>
             </div>
             <div className={styles.content}>
                 <h1 className={styles.introTitle}>부부 간의 난임 문제에 대한<br/>의사소통 빈도를 선택해주세요.</h1>
