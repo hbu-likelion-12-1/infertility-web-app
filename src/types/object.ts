@@ -20,6 +20,12 @@ export interface User {
   infertility: UserInfertility;
 }
 
+interface MatchUser {
+  id: number;
+  username: string;
+  sex: 'F' | 'M';
+  mindId: number;
+}
 
 export interface UserInfertility {
   id: number;
@@ -29,4 +35,20 @@ export interface UserInfertility {
   cost: InferCost;
   workplaceComprehension: WorkplaceComprehension;
   communication: InferCommunication;
+}
+
+
+export interface Question {
+  id: number;
+  content: string;
+  femaleAudioUrl?: string;
+  maleAudioUrl?: string;
+  createdAt: string;
+}
+
+export interface Match {
+  id: number;
+  husband: MatchUser;
+  wife: MatchUser;
+  question: Question;
 }
