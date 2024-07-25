@@ -1,0 +1,33 @@
+.splash {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 820px;
+    text-align: center;
+    background-color: white;
+
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    background: url('../../images/logo.svg') no-repeat center center;
+    background-size: contain;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.splash h1 {
+    font-size: 45px;
+    font-weight: 1000;
+    margin: 0;
+    color: #F3AF81;
+}
+
+.splash p {
+    font-size: 18px;
+    margin: 10px 0 0;
+    color: #F3AF81;
+    font-family: 'Noto Sans Oriya', sans-serif;
+}
