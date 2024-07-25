@@ -61,3 +61,9 @@ export interface Match {
   wife: MatchUser;
   question: Question;
 }
+
+export interface BloomAiFeedback {
+  id: number;
+  content: string;
+  createdAt: string;
+}
