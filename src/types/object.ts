@@ -1,4 +1,5 @@
 import {
+  Emotion,
   InferCareStatus,
   InferCause,
   InferCommunication,
@@ -43,6 +44,14 @@ export interface Question {
   content: string;
   femaleAudioUrl?: string;
   maleAudioUrl?: string;
+  createdAt: string;
+}
+
+export interface Mind {
+  id: number;
+  content: string;
+  emotion: Emotion;
+  writer: User;
   createdAt: string;
 }
 
