@@ -1,5 +1,13 @@
 import { apiClient } from './client';
 import { User } from '@/types/object';
+import {
+  InferCareStatus,
+  InferCause,
+  InferCommunication,
+  InferCost,
+  InferPeriod,
+  WorkplaceComprehension
+} from "@/types/enum";
 
 interface LoginResponse {
   user: User;
@@ -7,9 +15,27 @@ interface LoginResponse {
   kakaoId: string;
 }
 
+export interface SignupForm {
+  username: string;
+  sex: "F" | "M";
+  birthday: string;
+  region: string;
+  city: string;
+  town: string;
+  period: InferPeriod;
+  careStatus: InferCareStatus;
+  cause: InferCause;
+  cost: InferCost;
+  workplaceComprehension: WorkplaceComprehension;
+  communication: InferCommunication;
+  depressionTest: string;
+  kakaoId: string;
+}
+
 interface KakaoApi {
   getKakaoPublishAuthCodeUrl: () => Promise<string>;
   login: (authCode: string) => Promise<LoginResponse>;
+  signup: (form: SignupForm) => Promise<void>;
 }
 
 const ENDPOINT = '/user/auth';
@@ -21,5 +47,8 @@ export const kakaoApi: KakaoApi = {
   },
   login(authCode) {
     return apiClient.post(`${ENDPOINT}/login?code=${authCode}`);
-  }
+  },
+  signup(body) {
+    return apiClient.post(`${ENDPOINT}/signup`, body)
+  },
 };
