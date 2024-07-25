@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { toCamel } from 'snake-camel';
+import { toCamel, toSnake } from 'snake-camel';
 
 export const apiClient = axios.create({
   baseURL: 'http://galaxy4276.asuscomm.com:8008/api', timeout: 5000, headers: {
@@ -11,6 +11,9 @@ apiClient.interceptors.request.use((req) => {
   const token = localStorage.getItem('access');
   if (!token) return req;
   req.headers['Authorization'] = `Bearer ${token}`;
+  if (req.data) {
+    req.data = toSnake(req.data);
+  }
   return req;
 });
 
