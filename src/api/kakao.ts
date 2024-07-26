@@ -33,7 +33,7 @@ export interface SignupForm {
 }
 
 export interface KakaoApi {
-  getKakaoPublishAuthCodeUrl: () => Promise<string>;
+  getKakaoPublishAuthCodeUrl: () => Promise<{ url: string }>;
   login: (authCode: string) => Promise<LoginResponse>;
   signup: (form: SignupForm) => Promise<void>;
 }
