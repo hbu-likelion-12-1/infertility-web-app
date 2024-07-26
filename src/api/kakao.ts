@@ -46,7 +46,7 @@ export const kakaoApi: KakaoApi = {
     return apiClient.get(`${ENDPOINT}/kakao/url/`);
   },
   login(authCode) {
-    return apiClient.post(`${ENDPOINT}/login/?code=${authCode}`);
+    return apiClient.get(`${ENDPOINT}/login/?code=${authCode}`);
   },
   signup(body) {
     return apiClient.post(`${ENDPOINT}/signup/`, body)
