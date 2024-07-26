@@ -15,7 +15,7 @@ interface BloomDetails {
   emotions: Emotions;
 }
 
-const ENDPOINT = '/bloom';
+const ENDPOINT = '/bloom/';
 
 export const bloomApi: BloomApi = {
   get() {

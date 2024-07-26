@@ -22,9 +22,9 @@ export const matchApi: MatchApi = {
     return apiClient.post(`${ENDPOINT}/?code=${code}`);
   },
   provideInviteCode() {
-    return apiClient.post(`${ENDPOINT}/code`);
+    return apiClient.post(`${ENDPOINT}/code/`);
   },
   getStorageList() {
-    return apiClient.get(`${ENDPOINT}/storage`);
+    return apiClient.get(`${ENDPOINT}/storage/`);
   },
 };
