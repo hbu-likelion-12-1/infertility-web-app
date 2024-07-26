@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../../components/layout/Navbar.tsx';
+import Navbar from '../../components/Navbar.tsx';
 // import speakIconImage from '../assets/icon/home/speak.svg';
 // import messageIconImage from '../assets/icon/home/message.svg';
 import styles from '../../assets/styles/Main/Home.module.css';

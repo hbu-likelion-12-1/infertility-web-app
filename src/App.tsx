@@ -21,7 +21,7 @@ import Login from './pages/Login/Login.tsx';
 import Splash from './pages/Loading/Splash.tsx';
 import PartnerConnectionShare from './pages/Login/PartnerConnectionShare.tsx';
 import PartnerConnectionInput from './pages/Login/PartnerConnectionInput.tsx';
-import AppLayout from './components/layout/Layout';
+import AppLayout from './components/Layout.tsx';
 import Onboarding1 from "./pages/Loading/Onboarding1";
 import Onboarding2 from "./pages/Loading/Onboarding2";
 import Onboarding3 from "./pages/Loading/Onboarding3";
