@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from '../../assets/styles/Login/Login.module.css';
-import { Server } from '../../api/index.ts';
+import { Server } from '@/api';
 
 const LoginPage: React.FC = () => {
 

@@ -1,35 +1,26 @@
-.container {
+.recommendationContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: #FFF3E6;
-}
 
-.header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.flowerIcon {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-}
-
-.recommendation {
-    background-color: #FFF;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.recommendations, .policy, .videos {
     width: 100%;
-    max-width: 400px;
-    background-color: #FFF;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+
+}
+
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 30px 0 20px 20px;
+    text-align: left;
+}
+
+.logo {
+    width: 147px;
+    height: 147px;
+    background-image: url('../../../images/logo.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin: 10px 0 0 270px;
+    z-index: 1;
 }
