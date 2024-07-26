@@ -43,8 +43,8 @@ const LoginPage: React.FC = () => {
       const authCode = searchParams.get("code");
       if (!authCode) return;
       try {
-        const data = await Server.Kakao.login(authCode);
-        console.log({ data });
+        const user = await Server.Kakao.login(authCode);
+        console.log({ user });
       } catch (error) {
         console.error(error);
         alert("로그인에 실패하였습니다. 관리자에게 문의해주세요");
