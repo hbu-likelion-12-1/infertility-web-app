@@ -1,7 +1,7 @@
 import { BloomAiFeedback } from "@/types/object";
-import { apiClient } from "@/api/client.ts";
+import { apiClient } from "@/api/client";
 
-interface BloomApi {
+export interface BloomApi {
   get: () => Promise<BloomDetails>;
 }
 

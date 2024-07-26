@@ -2,7 +2,7 @@ import { Mind, Question } from "@/types/object";
 import { apiClient } from "@/api/client.ts";
 import { Emotion } from "@/types/enum.ts";
 
-interface QuestionApi {
+export interface QuestionApi {
   create: (matchId: number) => Promise<Question>;
   answerMind: (questionId: number, body: AnswerBody) => Promise<void>;
   getMind: (mindId: number) => Promise<Mind>;

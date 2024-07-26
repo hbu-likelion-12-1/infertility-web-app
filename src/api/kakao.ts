@@ -9,7 +9,7 @@ import {
   WorkplaceComprehension
 } from "@/types/enum";
 
-interface LoginResponse {
+export interface LoginResponse {
   user: User;
   accessToken: string;
   kakaoId: string;
@@ -32,7 +32,7 @@ export interface SignupForm {
   kakaoId: string;
 }
 
-interface KakaoApi {
+export interface KakaoApi {
   getKakaoPublishAuthCodeUrl: () => Promise<string>;
   login: (authCode: string) => Promise<LoginResponse>;
   signup: (form: SignupForm) => Promise<void>;

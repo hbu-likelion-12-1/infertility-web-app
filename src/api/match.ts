@@ -5,7 +5,7 @@ interface InviteCode {
   inviteCode: string;
 }
 
-interface MatchApi {
+export interface MatchApi {
   getMatch: () => Promise<Match>;
   create: (code: string) => Promise<Match>;
   provideInviteCode: () => Promise<InviteCode>;

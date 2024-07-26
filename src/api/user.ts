@@ -5,7 +5,7 @@ interface GetUserResponse extends User {
 }
 
 
-interface UserApi {
+export interface UserApi {
   get: () => Promise<GetUserResponse>;
 }
 
