@@ -15,11 +15,11 @@ const KakaoCallback = () => {
       setKakaoAuthCode(code);
     }
     navigate(referrer);
-  }, []);
+  }, [navigate, searchParams, setKakaoAuthCode]);
 
   return (
     <div>
-
+      로딩 중입니다..
     </div>
   );
 };

@@ -2,9 +2,11 @@ import React, { useEffect } from 'react';
 import styles from '../../assets/styles/Login/Login.module.css';
 import { Server } from '@/api';
 import { useLocation } from "react-router-dom";
+import { useAuthStore } from "@/store/AuthStore.tsx";
 
 const LoginPage: React.FC = () => {
   const location = useLocation();
+  const { kakaoAuthCode, clearKakaoAuthCode } = useAuthStore();
 
   const handleKakaoLogin = async () => {
     try {
@@ -16,22 +18,31 @@ const LoginPage: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    // URL에 인증 코드가 포함되어 있는지 확인
-    const query = new URLSearchParams(window.location.search);
-    const authCode = query.get('code');
+  // useEffect(() => {
+  //   // URL에 인증 코드가 포함되어 있는지 확인
+  //   const query = new URLSearchParams(window.location.search);
+  //   const authCode = query.get('code');
+  //
+  //   if (authCode) {
+  //     // 인증 코드가 있을 경우 로그인 처리
+  //     Server.Kakao.login(authCode).then(response => {
+  //       // 로그인 성공 처리
+  //       console.log('로그인 성공:', response);
+  //       // accessToken, user 정보 저장 등 추가 처리
+  //     }).catch(error => {
+  //       console.error('로그인 실패:', error);
+  //     });
+  //   }
+  // }, []);
 
-    if (authCode) {
-      // 인증 코드가 있을 경우 로그인 처리
-      Server.Kakao.login(authCode).then(response => {
-        // 로그인 성공 처리
-        console.log('로그인 성공:', response);
-        // accessToken, user 정보 저장 등 추가 처리
-      }).catch(error => {
-        console.error('로그인 실패:', error);
-      });
-    }
-  }, []);
+  useEffect(() => {
+    (async () => {
+      if (!kakaoAuthCode) return;
+      const data = await Server.Kakao.login(kakaoAuthCode);
+      console.log({ data });
+      clearKakaoAuthCode();
+    })();
+  }, [kakaoAuthCode]);
 
   return (
     <div className={styles.loginPage}>
