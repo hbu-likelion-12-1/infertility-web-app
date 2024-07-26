@@ -1,5 +1,5 @@
 import { Match, Question } from "@/types/object";
-import { apiClient } from "@/api/client";
+import { apiClient } from "./client";
 
 interface InviteCode {
   inviteCode: string;

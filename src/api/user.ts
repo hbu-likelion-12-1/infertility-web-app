@@ -1,5 +1,5 @@
 import { User } from "@/types/object";
-import { apiClient } from "@/api/client.ts";
+import { apiClient } from "./client";
 
 interface GetUserResponse extends User {
 }

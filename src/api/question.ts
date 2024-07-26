@@ -1,5 +1,5 @@
 import { Mind, Question } from "@/types/object";
-import { apiClient } from "@/api/client.ts";
+import { apiClient } from "./client";
 import { Emotion } from "@/types/enum.ts";
 
 export interface QuestionApi {
