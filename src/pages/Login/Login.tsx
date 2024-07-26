@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from '../../assets/styles/Login/Login.module.css';
 import { Server } from '@/api';
-import { useLocation } from "react-router-dom";
-import { useAuthStore } from "@/store/AuthStore.tsx";
+import { useLocation, useSearchParams } from "react-router-dom";
 
 const LoginPage: React.FC = () => {
   const location = useLocation();
-  const { kakaoAuthCode, clearKakaoAuthCode } = useAuthStore();
+  const [searchParams] = useSearchParams();
+  const hasFetched = useRef(false);
 
   const handleKakaoLogin = async () => {
     try {
@@ -36,13 +36,16 @@ const LoginPage: React.FC = () => {
   // }, []);
 
   useEffect(() => {
+
     (async () => {
-      if (!kakaoAuthCode) return;
-      const data = await Server.Kakao.login(kakaoAuthCode);
+      if (hasFetched.current) return;
+      hasFetched.current = true;
+      const authCode = searchParams.get("code");
+      if (!authCode) return;
+      const data = await Server.Kakao.login(authCode);
       console.log({ data });
-      clearKakaoAuthCode();
     })();
-  }, [kakaoAuthCode]);
+  }, []);
 
   return (
     <div className={styles.loginPage}>
