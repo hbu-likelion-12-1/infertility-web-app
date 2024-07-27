@@ -1,12 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import styles from '../../assets/styles/Login/Login.module.css';
 import { Server } from '@/api';
-import { useLocation, useSearchParams } from "react-router-dom";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 
 const LoginPage: React.FC = () => {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const hasFetched = useRef(false);
+  const navigate = useNavigate();
 
   const handleKakaoLogin = async () => {
     try {
@@ -18,23 +19,6 @@ const LoginPage: React.FC = () => {
     }
   };
 
-  // useEffect(() => {
-  //   // URL에 인증 코드가 포함되어 있는지 확인
-  //   const query = new URLSearchParams(window.location.search);
-  //   const authCode = query.get('code');
-  //
-  //   if (authCode) {
-  //     // 인증 코드가 있을 경우 로그인 처리
-  //     Server.Kakao.login(authCode).then(response => {
-  //       // 로그인 성공 처리
-  //       console.log('로그인 성공:', response);
-  //       // accessToken, user 정보 저장 등 추가 처리
-  //     }).catch(error => {
-  //       console.error('로그인 실패:', error);
-  //     });
-  //   }
-  // }, []);
-
   useEffect(() => {
 
     (async () => {
@@ -44,6 +28,9 @@ const LoginPage: React.FC = () => {
       if (!authCode) return;
       try {
         const user = await Server.Kakao.login(authCode);
+        if (!user) { // 회원가입 처리
+          
+        }
         console.log({ user });
       } catch (error) {
         console.error(error);

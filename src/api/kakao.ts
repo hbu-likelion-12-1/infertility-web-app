@@ -10,8 +10,8 @@ import {
 } from "@/types/enum";
 
 export interface LoginResponse {
-  user: User;
-  accessToken: string;
+  user?: User;
+  accessToken?: string;
   kakaoId: string;
 }
 
@@ -34,7 +34,7 @@ export interface SignupForm {
 
 export interface KakaoApi {
   getKakaoPublishAuthCodeUrl: () => Promise<{ url: string }>;
-  login: (authCode: string) => Promise<User>;
+  login: (authCode: string) => Promise<User | undefined>;
   signup: (form: SignupForm) => Promise<void>;
 }
 
@@ -47,11 +47,14 @@ export const kakaoApi: KakaoApi = {
   },
   async login(authCode) {
     const {
-      kakaoId: _,
+      kakaoId,
       accessToken,
-      user
+      user = undefined
     } = await apiClient.get(`${ENDPOINT}/login/?code=${authCode}`) as LoginResponse;
-    localStorage.setItem("access", accessToken);
+    localStorage.setItem("kakao_id", kakaoId);
+    if (accessToken) {
+      localStorage.setItem("access", accessToken);
+    }
     return user;
   },
   signup(body) {
