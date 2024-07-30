@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useMemo } from 'react';
 import LocalStorage from "@/shared/lib/local-storage";
 import { OnBoardPhase } from "@/shared/ui/onboard-loader/constants/enum";
 import OnboardWelcome from "@/shared/ui/onboard-loader/welcome.component";
@@ -12,11 +12,8 @@ import OnboardFinal from "@/shared/ui/onboard-loader/onboard-final.component";
 
 const OnboardLoader: React.FC<React.PropsWithChildren> = ({ children }) => {
   const { phase } = useOnboardPage();
-  const [firstLoaded, setFirstLoaded] = useState(() => {
-    return LocalStorage.getItem("initial-onboard") !== null;
-  });
+  const firstLoaded = useMemo(() => LocalStorage.getItem("initial-onboard") !== null, [])
 
-  console.log({ firstLoaded })
   if (firstLoaded) {
     return children;
   }
