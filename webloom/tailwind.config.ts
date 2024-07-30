@@ -16,6 +16,7 @@ const config: Config = {
         "accent-blue": "#186FD7",
         "background-0": "#F5F5F5",
         "background-1": "#E0E0E0",
+        "gray-0": "#7C7C7C",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

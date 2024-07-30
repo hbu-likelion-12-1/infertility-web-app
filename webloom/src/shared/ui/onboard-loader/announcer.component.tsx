@@ -1,23 +1,25 @@
 import React from 'react';
-import { SplashPage } from "@/shared/ui/SplashLoader/constants/enum";
+import { OnBoardPhase } from "./constants/enum";
 import Button from "@/shared/ui/button";
 import useOnboardPage from "@/shared/ui/onboard-loader/use-onboard.hook";
-import { OnBoardPhase } from "@/shared/ui/onboard-loader/constants/enum";
 import clsx from "clsx";
+import { useRouter } from "next/navigation";
 
 interface Props {
   children: React.ReactNode;
   buttonText: string;
-  next: SplashPage;
+  next: OnBoardPhase;
 }
 
 const Announcer: React.FC<Props> = ({ children, buttonText, next }) => {
   const { setPhase } = useOnboardPage();
+  const router = useRouter();
+
 
   const onClickNext = () => {
     if (next === OnBoardPhase.FINAL) {
-      // done
       localStorage.setItem("initial-onboard", "true");
+      return router.push("/login");
     }
 
     setPhase(next);
@@ -25,10 +27,12 @@ const Announcer: React.FC<Props> = ({ children, buttonText, next }) => {
 
   return (
     <div className={clsx([
-      "w-full h-[430px] pt-[36px] pb-[60px] px-[12px]",
+      "z-20",
+      "w-full h-[430px] pt-[36px] pb-[60px] px-[12px] bg-white",
       "absolute bottom-0 left-0",
       "shadow-onboard",
       "rounded-t-[25px]",
+      "flex flex-col"
     ])}>
       <section className="w-full flex-1">
         {children}
