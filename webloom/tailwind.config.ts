@@ -21,7 +21,12 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-bloom": "linear-gradient(180deg, rgba(248, 207, 179, 0.90) 0%, rgba(248, 207, 179, 0.90) 56.5%, rgba(243, 175, 129, 0.90) 100%)"
       },
+      boxShadow: {
+        "button": "0px 1px 2px 0px rgba(0, 0, 0, 0.25)",
+        "onboard": "0px 0px 10px 0px rgba(0, 0, 0, 0.13)",
+      }
     },
   },
   plugins: [],

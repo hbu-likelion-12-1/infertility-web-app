@@ -2,12 +2,15 @@
 
 import React from 'react';
 import SplashLoader from "@/shared/ui/SplashLoader";
+import OnboardLoader from "@/shared/ui/onboard-loader/onboard-loader.component";
 
 const StartPoint = () => {
   return (
-    <SplashLoader>
-      안녕하세요
-    </SplashLoader>
+    <OnboardLoader>
+      <SplashLoader>
+        안녕하세요
+      </SplashLoader>
+    </OnboardLoader>
   );
 };
 

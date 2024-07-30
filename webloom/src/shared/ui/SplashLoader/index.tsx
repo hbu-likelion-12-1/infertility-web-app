@@ -4,16 +4,8 @@ import React, { useEffect, useState } from 'react';
 import IconUtils from "@/shared/ui/IconUtils";
 import LocalStorage from "@/shared/lib/local-storage";
 
-enum SplashPage {
-  WELCOME,
-  MINDSHARE,
-  STRESS,
-  FINAL
-}
-
 
 const SplashLoader: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const [phase, setPhase] = useState<SplashPage>(SplashPage.WELCOME);
   const [firstLoaded, setFirstLoaded] = useState(() => {
     return LocalStorage.getItem("initial-load") !== null;
   });
