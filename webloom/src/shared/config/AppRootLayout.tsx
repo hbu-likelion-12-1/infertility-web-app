@@ -17,12 +17,14 @@ const AppRootLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
   }, []);
 
   return (
-    <div className="min-h-[calc(var(--vh,_1vh)*100)] flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-6 w-full min-h-[calc(var(--vh,_1vh)*100)] max-w-lg">
+    <div
+      className="min-h-[calc(var(--vh,_1vh)*100)] h-[calc(var(--vh,_1vh)*100)] flex items-center justify-center bg-gray-100">
+      <div className="bg-white h-full p-6 w-full max-w-[640px] flex flex-col">
         {children}
       </div>
     </div>
   );
 };
+
 
 export default AppRootLayout;

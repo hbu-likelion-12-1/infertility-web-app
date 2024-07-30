@@ -20,7 +20,6 @@ const LoginPage: React.FC = () => {
   };
 
   useEffect(() => {
-
     (async () => {
       if (hasFetched.current) return;
       hasFetched.current = true;
@@ -29,7 +28,7 @@ const LoginPage: React.FC = () => {
       try {
         const user = await Server.Kakao.login(authCode);
         if (!user) { // 회원가입 처리
-          
+
         }
         console.log({ user });
       } catch (error) {
