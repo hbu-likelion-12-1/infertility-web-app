@@ -12,7 +12,10 @@ const SplashLoader: React.FC<React.PropsWithChildren> = ({ children }) => {
 
   useEffect(() => {
     if (firstLoaded) return;
-    // LocalStorage.setItem("initial-load", "true");
+    setTimeout(() => {
+      LocalStorage.setItem("initial-load", "true");
+      setFirstLoaded(true);
+    }, 2000);
   }, [firstLoaded]);
 
   if (firstLoaded) {
