@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import clsx from "clsx";
 import AppRootLayout from "@/shared/config/AppRootLayout";
 import QueryProvider from "@/shared/config/QueryProvider";
+import HeaderGlobalNavigationBar from "@/shared/ui/header-gnb/gnb.component";
 
 
 export const metadata: Metadata = {
@@ -20,7 +21,10 @@ export default function RootLayout({
     <html lang="en" className="h-full">
     <body className={clsx([pretendard.className, pretendard.variable, "h-full"])}>
     <QueryProvider>
-      <AppRootLayout>{children}</AppRootLayout>
+      <AppRootLayout>
+        <HeaderGlobalNavigationBar/>
+        {children}
+      </AppRootLayout>
     </QueryProvider>
     </body>
     </html>

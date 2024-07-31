@@ -6,6 +6,8 @@ import Onboard4 from "../../../public/images/Onboard4.svg";
 import Previous from "../../../public/icon/side.svg";
 import SmallBloom from "../../../public/images/small.svg";
 import Kakao from "../../../public/icon/kakao-icon.svg";
+import Close from "../../../public/icon/x.svg";
+import GnbTitle from "../../../public/icon/gnb-title.svg";
 
 const IconUtils = {
   Flower,
@@ -16,6 +18,8 @@ const IconUtils = {
   Previous,
   SmallBloom,
   Kakao,
+  Close,
+  GnbTitle,
 };
 
 export default IconUtils;
