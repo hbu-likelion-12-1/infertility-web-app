@@ -11,6 +11,7 @@ const ProgressBar: React.FC<Props> = ({ completed }) => {
       completed={completed}
       labelColor="#F3AF81"
       bgColor="#FDEFE6"
+      
     />);
 };
 

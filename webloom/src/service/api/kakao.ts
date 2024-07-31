@@ -1,34 +1,10 @@
 import { apiClient } from './client';
 import { User } from '@/types/object';
-import {
-  InferCareStatus,
-  InferCause,
-  InferCommunication,
-  InferCost,
-  InferPeriod,
-  WorkplaceComprehension
-} from "@/types/enum";
+import { SignupForm } from "@/features/join/constants/types";
 
 export interface LoginResponse {
   user?: User;
   accessToken?: string;
-  kakaoId: string;
-}
-
-export interface SignupForm {
-  username: string;
-  sex: "F" | "M";
-  birthday: string;
-  region: string;
-  city: string;
-  town: string;
-  period: InferPeriod;
-  careStatus: InferCareStatus;
-  cause: InferCause;
-  cost: InferCost;
-  workplaceComprehension: WorkplaceComprehension;
-  communication: InferCommunication;
-  depressionTest: string;
   kakaoId: string;
 }
 
