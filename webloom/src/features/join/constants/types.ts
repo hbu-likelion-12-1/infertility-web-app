@@ -4,6 +4,7 @@ import {
   InferCommunication,
   InferCost,
   InferPeriod,
+  InferSupport,
   WorkplaceComprehension
 } from "@/types/enum";
 
@@ -18,6 +19,7 @@ export interface SignupForm {
   careStatus: InferCareStatus;
   cause: InferCause;
   cost: InferCost;
+  support: InferSupport;
   workplaceComprehension: WorkplaceComprehension;
   communication: InferCommunication;
   kakaoId: string;

@@ -3,7 +3,7 @@ import Button from "@/shared/ui/button";
 import clsx from "clsx";
 
 
-type Item = string | number;
+export type Item = string | number;
 
 interface ProviderProps {
   items: Item[];
