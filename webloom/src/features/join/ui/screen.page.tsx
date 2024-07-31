@@ -6,6 +6,7 @@ import { JoinPhase } from "@/features/join/constants/enum";
 import JoinNickname from "@/features/join/ui/phase/join-nickname.component";
 import ProgressBar from "@/features/join/ui/progress-bar.component";
 import convertProgress from "@/features/join/lib/progress-converter.util";
+import JoinSelectSex from "@/features/join/ui/phase/join-sex.component";
 
 
 // 13
@@ -19,6 +20,7 @@ const JoinScreenPage = () => {
       <ProgressBar completed={progress}/>
 
       {phase === JoinPhase.NICKNAME && <JoinNickname/>}
+      {phase === JoinPhase.SEX && <JoinSelectSex/>}
     </article>
   );
 };

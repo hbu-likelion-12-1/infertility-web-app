@@ -10,6 +10,7 @@ interface ProviderProps {
   children: ReactNode;
   current: Item;
   setter: (item: Item) => void;
+  className?: string;
 }
 
 interface ContextStates {
@@ -27,11 +28,14 @@ const Context = createContext<ContextStates>({
 const useRadioContext = () => useContext(Context);
 
 
-const RadioProvider: React.FC<ProviderProps> = ({ items, setter, children, current }) => {
+const RadioProvider: React.FC<ProviderProps> = ({ items, setter, children, current, className }) => {
   return (
-    <Context.Provider value={{ items, setter, selected: current }}>
-      {children}
-    </Context.Provider>
+    <div className={className}>
+      <Context.Provider value={{ items, setter, selected: current }}>
+        {children}
+      </Context.Provider>
+    </div>
+
   )
 };
 
@@ -42,7 +46,7 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
 
 const RadioButton: React.FC<ButtonProps> = ({ item, children, className, ...props }) => {
   const { items, setter, selected } = useRadioContext();
-  const isSelected = items.find(tem => selected);
+  const isSelected = selected === item;
 
   const onClickButton = () => setter(item);
 
@@ -52,6 +56,7 @@ const RadioButton: React.FC<ButtonProps> = ({ item, children, className, ...prop
       round="rounded"
       className={clsx([
         className,
+        "font-normal",
       ])}
       {...props}
       onClick={onClickButton}
