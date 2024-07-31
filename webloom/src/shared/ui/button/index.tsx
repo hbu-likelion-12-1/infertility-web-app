@@ -1,23 +1,28 @@
-import React, { ReactNode } from 'react';
+import React, { HTMLAttributes, MouseEvent, ReactNode } from 'react';
 import clsx from "clsx";
 import { ButtonRoundType, ButtonTheme, getButtonRound, getButtonTheme } from "./constants";
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLButtonElement> {
   className?: string;
   round?: ButtonRoundType;
   theme?: ButtonTheme;
-  onClick: () => void;
   children: ReactNode;
   prefixIcon?: ReactNode;
 }
 
 const Button: React.FC<Props> = ({
-                                   className, round = "normal", theme = "primary", onClick, children, prefixIcon
+                                   className,
+                                   round = "normal",
+                                   theme = "primary",
+                                   onClick,
+                                   children,
+                                   prefixIcon,
+                                   ...props
                                  }) => {
 
-  const onClickWrapper = () => {
+  const onClickWrapper = (e: MouseEvent<HTMLButtonElement>) => {
     if (theme === "disabled") return;
-    onClick();
+    onClick && onClick(e);
   };
 
   return (
@@ -33,6 +38,7 @@ const Button: React.FC<Props> = ({
         className,
       ])}
       onClick={onClickWrapper}
+      {...props}
     >
       {prefixIcon}
       {children}

@@ -1,5 +1,5 @@
 export type ButtonRoundType = "normal" | "rounded" | string;
-export type ButtonTheme = "primary" | "secondary" | "disabled" | "radio" | "kakao" | string;
+export type ButtonTheme = "primary" | "secondary" | "disabled" | "radio-disabled" | "radio" | "kakao" | string;
 
 const ButtonRoundDict: Record<ButtonRoundType, string> = {
   normal: "rounded-[15px]",
@@ -23,6 +23,7 @@ const ThemeDict: Record<ButtonTheme, string> = {
   radio: "text-black bg-primary-1 hover:bg-primary-0 border border-accent-red",
   kakao: "text-[#47292B] bg-[#FFE617] hover:bg-[#EED712]",
   disabled: "text-black bg-primary-1 font-normal cursor-not-allowed",
+  "radio-disabled": "text-black bg-[#F5F5F5]",
 };
 
 export const getButtonTheme = (type: ButtonTheme) => {
