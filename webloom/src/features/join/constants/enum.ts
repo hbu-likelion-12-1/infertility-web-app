@@ -1,5 +1,5 @@
 export enum JoinPhase {
-  NICKNAME,
+  NICKNAME = 0,
   SEX,
   BIRTHDAY,
   LIVING,

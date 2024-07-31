@@ -1,11 +1,25 @@
+"use client";
+
 import React from 'react';
+import useJoinStore from "@/features/join/lib/use-join.store";
+import { JoinPhase } from "@/features/join/constants/enum";
+import JoinNickname from "@/features/join/ui/phase/join-nickname.component";
+import ProgressBar from "@/features/join/ui/progress-bar.component";
+import convertProgress from "@/features/join/lib/progress-converter.util";
 
-const JoinPage = () => {
+
+// 13
+const JoinScreenPage = () => {
+  const { phase } = useJoinStore();
+  const progress = convertProgress(phase);
+
   return (
-    <div>
+    <article className="h-full w-full">
+      <ProgressBar completed={progress}/>
 
-    </div>
+      {phase === JoinPhase.NICKNAME && <JoinNickname/>}
+    </article>
   );
 };
 
-export default JoinPage;
+export default JoinScreenPage;

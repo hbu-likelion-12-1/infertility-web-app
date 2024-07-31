@@ -10,8 +10,10 @@ const ProgressBar: React.FC<Props> = ({ completed }) => {
     <Bar
       completed={completed}
       labelColor="#F3AF81"
-      bgColor="#FDEFE6"
-      
+      baseBgColor="#FDEFE6"
+      bgColor="#F3AF81"
+      height="10px"
+      borderRadius="0px"
     />);
 };
 
