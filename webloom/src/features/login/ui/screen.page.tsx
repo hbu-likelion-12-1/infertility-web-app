@@ -1,15 +1,19 @@
 "use client";
 
 import React from 'react';
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import IconUtils from "@/shared/ui/IconUtils";
 import Button from "@/shared/ui/button";
+import { Server } from "@/service/api";
 
 const LoginScreen = () => {
-  const router = useRouter();
+  const pathname = usePathname();
 
   const onClickLogin = async () => {
-
+    if (!pathname) return;
+    const { url } = await Server.Kakao.getKakaoPublishAuthCodeUrl();
+    localStorage.setItem("referrer", pathname);
+    window.location.href = url;
   };
 
   return (
