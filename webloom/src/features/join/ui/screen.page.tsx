@@ -15,6 +15,7 @@ const JoinScreenPage = () => {
 
   return (
     <article className="h-full w-full">
+      <div className="pt-[23px]"/>
       <ProgressBar completed={progress}/>
 
       {phase === JoinPhase.NICKNAME && <JoinNickname/>}
