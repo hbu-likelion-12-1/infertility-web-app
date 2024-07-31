@@ -7,6 +7,7 @@ import JoinNickname from "@/features/join/ui/phase/join-nickname.component";
 import ProgressBar from "@/features/join/ui/progress-bar.component";
 import convertProgress from "@/features/join/lib/progress-converter.util";
 import JoinSelectSex from "@/features/join/ui/phase/join-sex.component";
+import JoinBirthday from "@/features/join/ui/phase/join-birthday.component";
 
 
 // 13
@@ -21,6 +22,7 @@ const JoinScreenPage = () => {
 
       {phase === JoinPhase.NICKNAME && <JoinNickname/>}
       {phase === JoinPhase.SEX && <JoinSelectSex/>}
+      {phase === JoinPhase.BIRTHDAY && <JoinBirthday/>}
     </article>
   );
 };
