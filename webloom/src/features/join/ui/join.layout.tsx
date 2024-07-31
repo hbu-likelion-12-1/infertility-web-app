@@ -8,9 +8,10 @@ interface Props {
   children: ReactNode;
   next: JoinPhase;
   buttonText: string;
+  buttonDisabled: boolean;
 }
 
-const JoinLayout: React.FC<Props> = ({ children, title, buttonText, next }) => {
+const JoinLayout: React.FC<Props> = ({ children, title, buttonText, next, buttonDisabled }) => {
   const { setPhase } = useJoinStore();
 
   const onClickNext = async () => {
@@ -29,6 +30,7 @@ const JoinLayout: React.FC<Props> = ({ children, title, buttonText, next }) => {
         <Button
           onClick={onClickNext}
           className="w-full"
+          theme={buttonDisabled ? "disabled" : "primary"}
         >
           {buttonText}
         </Button>

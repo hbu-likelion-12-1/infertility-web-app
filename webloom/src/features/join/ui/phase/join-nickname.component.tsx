@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import JoinLayout from "@/features/join/ui/join.layout";
 import Input from "@/shared/ui/input/input.component";
 import { JoinPhase } from "@/features/join/constants/enum";
+import useJoinStore from "@/features/join/lib/use-join.store";
 
 const JoinNickname = () => {
   const [value, setValue] = useState("");
+  const { setSignupForm, signupForm } = useJoinStore();
 
   const onInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    console.log({ value });
     if (value.length > 10) return;
     setValue(e.target.value);
+    setSignupForm({ ...signupForm, username: value });
   };
 
   return (
@@ -18,6 +20,7 @@ const JoinNickname = () => {
       title="닉네임 혹은 애칭을 입력해주세요"
       next={JoinPhase.SEX}
       buttonText="다음"
+      buttonDisabled={value.length < 3}
     >
       <section className="flex gap-x-3 items-end">
         <Input
