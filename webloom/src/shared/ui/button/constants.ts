@@ -22,7 +22,7 @@ const ThemeDict: Record<ButtonTheme, string> = {
   secondary: "text-black bg-primary-1 hover:bg-primary-0",
   radio: "text-black bg-primary-1 hover:bg-primary-0 border border-accent-red",
   kakao: "text-[#47292B] bg-[#FFE617] hover:bg-[#EED712]",
-  disabled: "text-black bg-background-1 cursor-not-allowed",
+  disabled: "text-black bg-primary-1 hover:bg-primary-0 cursor-not-allowed",
 };
 
 export const getButtonTheme = (type: ButtonTheme) => {
