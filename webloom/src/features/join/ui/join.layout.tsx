@@ -18,14 +18,14 @@ const JoinLayout: React.FC<Props> = ({ children, title, buttonText, next }) => {
   };
 
   return (
-    <article className="w-full h-full px-[12px] overflow-y-scroll overflow-x-hidden relative">
+    <article className="w-full min-h-full px-[12px] overflow-y-scroll overflow-x-hidden relative">
       <section className="pb-[50px] text-[20px] w-full text-center pt-[23px] font-bold">
         <span>{title}</span>
       </section>
 
       {children}
 
-      <section className="w-full absolute bottom-[60px]">
+      <section className="absolute bottom-[60px] left-0 right-0 px-[12px]">
         <Button
           onClick={onClickNext}
           className="w-full"
