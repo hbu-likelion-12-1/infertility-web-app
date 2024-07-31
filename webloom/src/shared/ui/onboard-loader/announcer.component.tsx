@@ -38,7 +38,7 @@ const Announcer: React.FC<Props> = ({ children, buttonText, next }) => {
         {children}
       </section>
       <section>
-        <Button onClick={onClickNext} classNames="w-full">
+        <Button onClick={onClickNext} className="w-full">
           {buttonText}
         </Button>
       </section>
