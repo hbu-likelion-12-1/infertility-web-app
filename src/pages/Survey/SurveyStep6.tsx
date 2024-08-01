@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import styles from '../../assets/styles/Survey/SurveyStepInfertility.module.css';
 
-const SurveyStep5: React.FC = () => {
+const SurveyStep6: React.FC = () => {
     const navigate = useNavigate();
     const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
@@ -72,4 +72,4 @@ const SurveyStep5: React.FC = () => {
     );
 };
 
-export default SurveyStep5;
+export default SurveyStep6;

@@ -6,11 +6,13 @@ import { OnBoardPhase } from "@/shared/ui/onboard-loader/constants/enum";
 const OnboardStressCare = () => {
   return (
     <div className="flex flex-col items-center">
-      <IconUtils.Onboard3/>
-      <Announcer
-        buttonText="다음"
-        next={OnBoardPhase.FINAL}
-      >
+        <div className="mb-[80px]">
+            <IconUtils.Onboard3/>
+        </div>
+        <Announcer
+            buttonText="다음"
+            next={OnBoardPhase.FINAL}
+        >
         <section className="flex flex-col text-center text-[20px] pt-[10px] pb-[80px]">
           <nav className="text-center flex flex-col items-center justify-center pb-[30px]">
             <h1 className="text-black font-bold text-[28px]">난임 스트레스</h1>
