@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from '../../assets/styles/Survey/SurveyStep3.module.css';
+import { useSignupStore } from '@/store/signupStore';
+import styles from '@/assets/styles/Survey/SurveyStep3.module.css';
 
 const SurveyStep3: React.FC = () => {
     const navigate = useNavigate();
     const [year, setYear] = useState<string | null>(null);
     const [month, setMonth] = useState<string | null>(null);
     const [day, setDay] = useState<string | null>(null);
+    const setSignupData = useSignupStore((state) => state.setSignupData);
 
     const handleNextClick = () => {
         if (year && month && day) {
+            const birthday = `${year}-${month}-${day}`;
+            setSignupData({ birthday }); // 생년월일 상태 저장
             navigate('/survey/step4');
         }
     };

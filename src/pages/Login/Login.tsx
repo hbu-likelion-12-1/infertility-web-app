@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import styles from '../../assets/styles/Login/Login.module.css';
 import { Server } from '@/api';
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 
 const LoginPage: React.FC = () => {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const hasFetched = useRef(false);
-  const navigate = useNavigate();
+
 
   const handleKakaoLogin = async () => {
     try {

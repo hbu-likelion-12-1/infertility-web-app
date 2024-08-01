@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from '../../assets/styles/Survey/SurveyStep2.module.css';
+import { useSignupStore } from '@/store/signupStore';
+import styles from '@/assets/styles/Survey/SurveyStep2.module.css';
 
 const SurveyStep2: React.FC = () => {
     const navigate = useNavigate();
     const [selectedGender, setSelectedGender] = useState<string | null>(null);
+    const setSignupData = useSignupStore((state) => state.setSignupData);
 
     const handleGenderSelect = (gender: string) => {
         setSelectedGender(gender);
@@ -12,6 +14,7 @@ const SurveyStep2: React.FC = () => {
 
     const handleNextClick = () => {
         if (selectedGender) {
+            setSignupData({ sex: selectedGender === 'female' ? 'F' : 'M' });
             navigate('/survey/step3');
         }
     };

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from '../../assets/styles/Survey/SurveyStep1.module.css';
+import { useSignupStore } from '@/store/signupStore';
+import styles from '@/assets/styles/Survey/SurveyStep1.module.css';
 
 const SurveyStep1: React.FC = () => {
     const [nickname, setNickname] = useState('');
+    const setSignupData = useSignupStore((state) => state.setSignupData);
     const navigate = useNavigate();
 
     const handleNicknameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -14,6 +16,7 @@ const SurveyStep1: React.FC = () => {
 
     const handleNextClick = () => {
         if (nickname.length > 0) {
+            setSignupData({ username: nickname });
             navigate('/survey/step2');
         }
     };
@@ -52,4 +55,5 @@ const SurveyStep1: React.FC = () => {
     );
 };
 
+// @ts-ignore
 export default SurveyStep1;

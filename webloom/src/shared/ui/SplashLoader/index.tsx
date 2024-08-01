@@ -28,7 +28,7 @@ const SplashLoader: React.FC<React.PropsWithChildren> = ({ children }) => {
 
       <section className="flex flex-col text-center pt-[40px]">
         <span className="text-[#F3AF81] font-bold text-[42px]">WeBloom</span>
-        <span className="text-[18px]">우리 같이 행복을 꽃 피워요</span>
+        <span className="text-[#111111] text-[18px]">우리 같이 행복을 꽃 피워요</span>
       </section>
     </div>
   );
