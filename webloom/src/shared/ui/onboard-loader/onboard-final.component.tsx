@@ -13,6 +13,7 @@ const OnboardFinal = () => {
         <Announcer
             buttonText="난임 극복 여정 시작하기"
             next={OnBoardPhase.FINAL}
+            isFinal={true}
       >
         <section className="flex flex-col text-center text-[20px] py-[40px]">
           <h3 className="text-[#111111] font-[500]">지금 바로 가입하고,</h3>

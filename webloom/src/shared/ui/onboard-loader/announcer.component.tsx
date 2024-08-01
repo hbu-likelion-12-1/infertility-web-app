@@ -9,19 +9,21 @@ interface Props {
   children: React.ReactNode;
   buttonText: string;
   next: OnBoardPhase;
+  isFinal?: boolean;
 }
 
-const Announcer: React.FC<Props> = ({ children, buttonText, next }) => {
+const Announcer: React.FC<Props> = ({ children, buttonText, next, isFinal }) => {
   const { setPhase } = useOnboardPage();
   const router = useRouter();
 
 
   const onClickNext = () => {
-    if (next === OnBoardPhase.FINAL) {
+    if (isFinal) {
+      console.log('Navigating to login...');
       localStorage.setItem("initial-onboard", "true");
       return router.push("/login");
     }
-
+    console.log('Setting phase to next:', next);
     setPhase(next);
   };
 
