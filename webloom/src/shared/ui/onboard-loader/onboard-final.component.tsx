@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import IconUtils from "@/shared/ui/IconUtils";
 import Announcer from "./announcer.component";
 import { OnBoardPhase } from "@/shared/ui/onboard-loader/constants/enum";
-import {router} from "next/client";
 
 const OnboardFinal = () => {
   return (
