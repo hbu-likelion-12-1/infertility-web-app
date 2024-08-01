@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import useJoinStore from "@/features/join/lib/use-join.store";
 import { JoinPhase } from "@/features/join/constants/enum";
 import JoinNickname from "@/features/join/ui/phase/join-nickname.component";
@@ -20,8 +20,17 @@ import DepressionTest from "@/features/join/ui/phase/depression-test.component";
 
 
 const JoinScreenPage = () => {
-  const { phase } = useJoinStore();
+  const { phase, setSignupForm, signupForm } = useJoinStore();
   const progress = convertProgress(phase);
+
+  useEffect(() => {
+    const kakaoId = localStorage.getItem("kakao_id");
+    if (!kakaoId) return;
+    setSignupForm({
+      ...signupForm,
+      kakaoId,
+    });
+  }, []);
 
   return (
     <article className="h-full w-full overflow-y-scroll">

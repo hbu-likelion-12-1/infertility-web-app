@@ -9,7 +9,7 @@ import { DepressionQueries } from "@/features/join/constants/constant";
 
 
 const DepressionTest = () => {
-  const { setSignupForm, signupForm } = useJoinStore();
+  const { setSignupForm, signupForm, setDepressionScore } = useJoinStore();
   const [test, setTest] = useState<number[]>(() => Array(9).fill(-1));
 
   const onChangeTestOption = (v: number, seq: number) => {
@@ -19,19 +19,18 @@ const DepressionTest = () => {
     const fiiled = c.every(o => o !== -1);
     if (fiiled) {
       const total: number = c.reduce((a, b) => a + b, 0);
+      setDepressionScore(total);
       setSignupForm({ ...signupForm, depressionTest: String(total) });
     }
 
     setTest(c);
   };
 
-  console.log(`depression test: ${!!signupForm.depressionTest}`)
-
   return (
     <JoinLayout
       title="우울증 테스트입니다. 다음 문항들을 읽고 해당되는 것을 선택해주세요."
       next={JoinPhase.DEPRESSION_TEST}
-      buttonText="고생하셨어요! 이제 마지막 단계만 남았어요."
+      buttonText="결과 보기"
       buttonDisabled={!signupForm.depressionTest}
     >
       <div className={clsx([

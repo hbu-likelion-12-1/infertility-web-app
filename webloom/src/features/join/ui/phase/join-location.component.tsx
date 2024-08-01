@@ -9,30 +9,31 @@ const yearOptions = birthdayOptionsUtil.year();
 const monthOptions = birthdayOptionsUtil.month();
 const dayOptions = birthdayOptionsUtil.day();
 
-interface DateState {
-  year?: string;
-  month?: string;
-  day?: string;
+interface LocationState {
+  city: string;
+  region: string;
+  town: string;
 }
+
 
 const JoinLocation = () => {
   const { setSignupForm, signupForm } = useJoinStore();
-  const [date, setDate] = useState<DateState>({
-    year: undefined, month: undefined, day: undefined,
+  const [location, setLocation] = useState<Partial<LocationState>>({
+    city: undefined, region: undefined, town: undefined,
   });
-  const pass = Object.values(date).every(v => v !== undefined);
 
-  const onChangeSelectOption = (value: unknown, key: keyof DateState) => {
+  const pass = Object.values(location).every(v => v !== undefined);
+
+  const onChangeSelectOption = (value: unknown, key: keyof LocationState) => {
     const { value: v } = value as { value: string };
-    setDate(prev => ({ ...prev, [key]: v }));
+    setLocation(prev => ({ ...prev, [key]: v }));
   };
 
   useEffect(() => {
     if (!pass) return;
-    const { year, month, day } = date;
-    const birthday = `${year}-${month}-${day}`;
-    setSignupForm({ ...signupForm, birthday });
-  }, [date, pass]);
+    const { city, town, region } = location;
+    setSignupForm({ ...signupForm, city, region, town });
+  }, [location, pass]);
 
   return (
     <JoinLayout
@@ -45,20 +46,20 @@ const JoinLocation = () => {
         <Select
           options={yearOptions}
           placeholder="시•도"
-          onChange={v => onChangeSelectOption(v, "year")}
+          onChange={v => onChangeSelectOption(v, "city")}
           className="!flex-1"
         />
         <Select
           options={monthOptions}
           placeholder="시•군•구"
           className="!flex-1"
-          onChange={v => onChangeSelectOption(v, "month")}
+          onChange={v => onChangeSelectOption(v, "region")}
         />
         <Select
           options={dayOptions}
           placeholder="동•읍•면"
           className="!flex-1"
-          onChange={v => onChangeSelectOption(v, "day")}
+          onChange={v => onChangeSelectOption(v, "town")}
         />
       </section>
     </JoinLayout>

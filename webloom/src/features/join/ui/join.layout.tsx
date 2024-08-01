@@ -4,6 +4,10 @@ import React, { ReactNode } from 'react';
 import Button from "@/shared/ui/button";
 import { JoinPhase } from "@/features/join/constants/enum";
 import useJoinStore from "@/features/join/lib/use-join.store";
+import { useRouter } from "next/navigation";
+import { Server } from "@/service/api";
+import { SignupForm } from "@/features/join/constants/types";
+import useAuth from "@/shared/lib/use-auth.hook";
 
 interface Props {
   title: string;
@@ -22,9 +26,18 @@ const JoinLayout: React.FC<Props> = ({
                                        buttonDisabled,
                                        className
                                      }) => {
-  const { setPhase } = useJoinStore();
+  const router = useRouter();
+  const { login } = useAuth();
+  const { setPhase, signupForm } = useJoinStore();
 
   const onClickNext = async () => {
+    const complete = Object.values(signupForm).every(Boolean);
+    console.log({ signupForm, complete });
+    if (complete) {
+      const user = await Server.Kakao.signup(signupForm as SignupForm);
+      login(user);
+      return router.push("/join/result");
+    }
     setPhase(next);
   };
 

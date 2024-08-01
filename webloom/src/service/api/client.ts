@@ -10,8 +10,9 @@ export const apiClient = axios.create({
 
 apiClient.interceptors.request.use((req) => {
   const token = localStorage.getItem('access');
-  if (!token) return req;
-  req.headers['Authorization'] = `Bearer ${token}`;
+  if (token) {
+    req.headers['Authorization'] = `Bearer ${token}`;
+  }
   if (req.data) {
     req.data = toSnake(req.data);
   }

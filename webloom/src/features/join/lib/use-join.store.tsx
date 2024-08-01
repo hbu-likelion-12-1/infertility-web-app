@@ -7,6 +7,8 @@ interface States {
   setPhase: (phase: JoinPhase) => void;
   signupForm: Partial<SignupForm>;
   setSignupForm: (signupForm: Partial<SignupForm>) => void;
+  depressionScore: number;
+  setDepressionScore: (n: number) => void;
 }
 
 const useJoinStore = create<States>(set => ({
@@ -29,6 +31,8 @@ const useJoinStore = create<States>(set => ({
     workplaceComprehension: undefined,
   },
   setSignupForm: form => set({ signupForm: form }),
+  depressionScore: 0,
+  setDepressionScore: n => set({ depressionScore: n }),
 }));
 
 export default useJoinStore;
