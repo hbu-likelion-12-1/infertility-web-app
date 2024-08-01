@@ -24,7 +24,7 @@ const JoinScreenPage = () => {
   const progress = convertProgress(phase);
 
   return (
-    <article className="h-full w-full">
+    <article className="h-full w-full overflow-y-scroll">
       <div className="pt-[23px]"/>
       <ProgressBar completed={progress}/>
 

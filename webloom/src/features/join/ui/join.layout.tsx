@@ -30,7 +30,7 @@ const JoinLayout: React.FC<Props> = ({
 
   return (
     <article
-      className="w-full min-h-full px-[12px] overflow-y-scroll overflow-x-hidden relative"
+      className="w-full min-h-full px-[12px] overflow-y-scroll overflow-x-hidden"
     >
       <section className="pb-[50px] text-[20px] w-full text-center pt-[23px] font-bold">
         <span>{title}</span>
