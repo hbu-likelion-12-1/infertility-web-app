@@ -12,3 +12,10 @@ export enum JoinPhase {
   INFER_COMMUNICATION,
   DEPRESSION_TEST,
 }
+
+export enum DepressionOption {
+  NONE = 0,
+  TWO_SIX,
+  SEVEN_TWELVES,
+  EVERYDAY,
+}

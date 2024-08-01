@@ -19,7 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
-    <body className={clsx([pretendard.className, pretendard.variable, "h-full"])}>
+    <body
+      id="root"
+      className={clsx([pretendard.className, pretendard.variable, "h-full"])}
+    >
     <QueryProvider>
       <AppRootLayout>
         <HeaderGlobalNavigationBar/>

@@ -1,6 +1,7 @@
 import React, { createContext, HTMLAttributes, ReactNode, useContext } from 'react';
 import Button from "@/shared/ui/button";
 import clsx from "clsx";
+import { getRadioTheme } from "@/shared/ui/radio-button/lib/theme.util";
 
 
 export type Item = string | number;
@@ -8,7 +9,7 @@ export type Item = string | number;
 interface ProviderProps {
   items: Item[];
   children: ReactNode;
-  current: Item;
+  current?: Item;
   setter: (item: Item) => void;
   className?: string;
 }
@@ -42,18 +43,25 @@ const RadioProvider: React.FC<ProviderProps> = ({ items, setter, children, curre
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   item: Item;
   children: ReactNode;
+  theme?: "depression" | "default";
 }
 
-const RadioButton: React.FC<ButtonProps> = ({ item, children, className, ...props }) => {
-  const { items, setter, selected } = useRadioContext();
+const RadioButton: React.FC<ButtonProps> = ({
+                                              item,
+                                              children,
+                                              className,
+                                              theme = "default",
+                                              ...props
+                                            }) => {
+  const { setter, selected } = useRadioContext();
   const isSelected = selected === item;
 
   const onClickButton = () => setter(item);
 
   return (
     <Button
-      theme={isSelected ? "radio" : "radio-disabled"}
-      round="rounded"
+      theme={getRadioTheme(isSelected, theme)}
+      round={theme === "default" ? "rounded" : "normal"}
       className={clsx([
         className,
         "font-normal",

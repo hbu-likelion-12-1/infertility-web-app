@@ -16,6 +16,7 @@ import JoinInferCause from "@/features/join/ui/phase/join-infer-cause.component"
 import JoinInferSupport from "@/features/join/ui/phase/join-infer-support.component";
 import JoinWorkPlace from "@/features/join/ui/phase/join-infer-workplace.component";
 import JoinCommunication from "@/features/join/ui/phase/join-infer-communication.component";
+import DepressionTest from "@/features/join/ui/phase/depression-test.component";
 
 
 const JoinScreenPage = () => {
@@ -39,9 +40,10 @@ const JoinScreenPage = () => {
       {phase === JoinPhase.INFER_SUPPORT && <JoinInferSupport/>}
       {phase === JoinPhase.INFER_WORK_COMPREHENSION && <JoinWorkPlace/>}
       {phase === JoinPhase.INFER_COMMUNICATION && <JoinCommunication/>}
+
+      {phase === JoinPhase.DEPRESSION_TEST && <DepressionTest/>}
     </article>
   );
 };
 
 export default JoinScreenPage;
-

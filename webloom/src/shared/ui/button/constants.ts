@@ -23,6 +23,7 @@ const ThemeDict: Record<ButtonTheme, string> = {
   radio: "text-black bg-primary-1 hover:bg-primary-0 border border-accent-red",
   kakao: "text-[#47292B] bg-[#FFE617] hover:bg-[#EED712]",
   disabled: "text-black bg-primary-1 font-normal cursor-not-allowed",
+  depression: "bg-white text-primary-0 border-[3px] border-primary-0",
   "radio-disabled": "text-black bg-[#F5F5F5]",
 };
 

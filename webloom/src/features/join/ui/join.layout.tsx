@@ -1,3 +1,5 @@
+"use client";
+
 import React, { ReactNode } from 'react';
 import Button from "@/shared/ui/button";
 import { JoinPhase } from "@/features/join/constants/enum";
@@ -9,9 +11,17 @@ interface Props {
   next: JoinPhase;
   buttonText: string;
   buttonDisabled: boolean;
+  className?: string;
 }
 
-const JoinLayout: React.FC<Props> = ({ children, title, buttonText, next, buttonDisabled }) => {
+const JoinLayout: React.FC<Props> = ({
+                                       children,
+                                       title,
+                                       buttonText,
+                                       next,
+                                       buttonDisabled,
+                                       className
+                                     }) => {
   const { setPhase } = useJoinStore();
 
   const onClickNext = async () => {
@@ -19,12 +29,16 @@ const JoinLayout: React.FC<Props> = ({ children, title, buttonText, next, button
   };
 
   return (
-    <article className="w-full min-h-full px-[12px] overflow-y-scroll overflow-x-hidden relative">
+    <article
+      className="w-full min-h-full px-[12px] overflow-y-scroll overflow-x-hidden relative"
+    >
       <section className="pb-[50px] text-[20px] w-full text-center pt-[23px] font-bold">
         <span>{title}</span>
       </section>
 
-      {children}
+      <div className={className}>
+        {children}
+      </div>
 
       <section className="absolute bottom-[60px] left-0 right-0 px-[12px]">
         <Button
