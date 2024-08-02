@@ -6,6 +6,7 @@ import clsx from "clsx";
 import AppRootLayout from "@/shared/config/AppRootLayout";
 import QueryProvider from "@/shared/config/QueryProvider";
 import HeaderGlobalNavigationBar from "@/shared/ui/header-gnb/gnb.component";
+import FooterGlobalNavigationBar from "@/shared/ui/footer-gnb/gnb.component";
 
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function RootLayout({
       <AppRootLayout>
         <HeaderGlobalNavigationBar/>
         {children}
+        <FooterGlobalNavigationBar/>
       </AppRootLayout>
     </QueryProvider>
     </body>

@@ -11,6 +11,13 @@ import Close from "../../../public/icon/x.svg";
 import GnbTitle from "../../../public/icon/gnb-title.svg";
 import Next from "../../../public/icon/next.svg";
 
+import DeActiveHome from "../../../public/icon/nav/deactive-home.svg";
+import DeActiveFlower from "../../../public/icon/nav/deactive-flower.svg";
+import DeActiveStorage from "../../../public/icon/nav/deactive-storage.svg";
+import ActiveHome from "../../../public/icon/nav/active-home.svg";
+import ActiveFlower from "../../../public/icon/nav/active-flower.svg";
+import ActiveStorage from "../../../public/icon/nav/active-storage.svg";
+
 const IconUtils = {
   Flower,
   BigFlower,
@@ -24,6 +31,12 @@ const IconUtils = {
   Next,
   Close,
   GnbTitle,
+  DeActiveHome,
+  DeActiveFlower,
+  DeActiveStorage,
+  ActiveFlower,
+  ActiveHome,
+  ActiveStorage,
 };
 
 export default IconUtils;

@@ -28,7 +28,8 @@ const config: Config = {
         "button": "0px 1px 2px 0px rgba(0, 0, 0, 0.25)",
         "onboard": "0px 0px 10px 0px rgba(0, 0, 0, 0.13)",
         "input": "0px 1px 2px 0px rgba(0, 0, 0, 0.25)",
-        "card": "0px 0px 10px 0px rgba(0, 0, 0, 0.13)"
+        "card": "0px 0px 10px 0px rgba(0, 0, 0, 0.13)",
+        "footer": "0px 0px 10px 0px rgba(0, 0, 0, 0.13)",
       },
     },
   },
