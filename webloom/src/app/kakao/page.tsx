@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import { useRouter, useSearchParams } from "next/navigation";
 import { Server } from "@/service/api";
 import useAuth from "@/shared/lib/use-auth.hook";
+import AppLoading from "@/shared/ui/loading/loading.component";
 
 const KakaoCallbackPage = () => {
   const router = useRouter();
@@ -37,11 +38,7 @@ const KakaoCallbackPage = () => {
     })();
   }, [login, router, searchParams]);
 
-  return (
-    <div>
-      잠시만 기다려주세요...
-    </div>
-  );
+  return <AppLoading/>;
 };
 
 export default KakaoCallbackPage;
