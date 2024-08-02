@@ -6,9 +6,10 @@ interface InviteCode {
 }
 
 export interface MatchApi {
-  getMatch: () => Promise<Match>;
+  getMatch: () => Promise<Match | null>;
   create: (code: string) => Promise<Match>;
   provideInviteCode: () => Promise<InviteCode>;
+  getInviteCode: () => Promise<{ inviteCode: InviteCode | null }>;
   getStorageList: () => Promise<Question[]>;
 }
 
@@ -20,6 +21,9 @@ export const matchApi: MatchApi = {
   },
   create(code) {
     return apiClient.post(`${ENDPOINT}/?code=${code}`);
+  },
+  getInviteCode() {
+    return apiClient.get(`${ENDPOINT}/code/`);
   },
   provideInviteCode() {
     return apiClient.post(`${ENDPOINT}/code/`);
