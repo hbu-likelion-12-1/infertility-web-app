@@ -15,7 +15,7 @@ const OnboardStressCare = () => {
             currentStep={2}
             totalSteps={4}
         >
-        <section className="flex flex-col text-center text-[20px] pt-[10px] pb-[80px]">
+        <section className="flex flex-col text-center text-[20px] pt-[5px] pb-[40px]">
           <nav className="text-center flex flex-col items-center justify-center pb-[30px]">
             <h1 className="text-black font-bold text-[28px]">난임 스트레스</h1>
             <h1 className="font-bold text-primary-0 text-[28px]">함께 관리해요</h1>
