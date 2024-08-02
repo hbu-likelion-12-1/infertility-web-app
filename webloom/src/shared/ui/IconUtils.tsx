@@ -27,6 +27,9 @@ import Normal from "../../../public/icon/mood/normal.svg";
 import Bad from "../../../public/icon/mood/bad.svg";
 import Worst from "../../../public/icon/mood/verybad.svg";
 
+import VoiceComplete from "../../../public/icon/voice-complete.svg";
+import VoiceReady from "../../../public/icon/voice-ready.svg";
+
 
 const IconUtils = {
   Flower,
@@ -50,6 +53,7 @@ const IconUtils = {
   ActiveRadio,
   DeActiveRadio,
   Happy, Good, Normal, Bad, Worst,
+  VoiceReady, VoiceComplete,
 };
 
 export default IconUtils;
