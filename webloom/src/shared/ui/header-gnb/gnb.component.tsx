@@ -13,10 +13,10 @@ const HeaderGlobalNavigationBar = () => {
     if (
       pathname.includes("/join")
     ) {
-      return false;
+      return true;
     }
 
-    return true;
+    return false;
   })();
 
   if (hide) return null;
