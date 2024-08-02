@@ -1,4 +1,5 @@
 import Flower from "../../../public/images/logo.svg";
+import BigFlower from "../../../public/icon/big-flower.svg";
 import Onboard1 from "../../../public/images/Onboard1.svg";
 import Onboard2 from "../../../public/images/Onboard2.svg";
 import Onboard3 from "../../../public/images/Onboard3.svg";
@@ -11,6 +12,7 @@ import GnbTitle from "../../../public/icon/gnb-title.svg";
 
 const IconUtils = {
   Flower,
+  BigFlower,
   Onboard1,
   Onboard2,
   Onboard3,

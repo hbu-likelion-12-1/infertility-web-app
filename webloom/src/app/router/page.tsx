@@ -20,13 +20,14 @@ const UserServiceRouterPage = () => {
       const match = await Server.Match.getMatch();
       if (!match) return router.push("/invite");
       setMatch(match);
+
+      router.push("/service");
     })();
   }, []);
 
   return (
     <article className="w-full h-full">
       {!match && <AppLoading/>}
-      {match && <>Hello</>}
     </article>
   );
 };
