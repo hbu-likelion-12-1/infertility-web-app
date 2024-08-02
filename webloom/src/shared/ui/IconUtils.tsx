@@ -9,6 +9,7 @@ import SmallBloom from "../../../public/images/small.svg";
 import Kakao from "../../../public/icon/kakao-icon.svg";
 import Close from "../../../public/icon/x.svg";
 import GnbTitle from "../../../public/icon/gnb-title.svg";
+import Next from "../../../public/icon/next.svg";
 
 const IconUtils = {
   Flower,
@@ -20,6 +21,7 @@ const IconUtils = {
   Previous,
   SmallBloom,
   Kakao,
+  Next,
   Close,
   GnbTitle,
 };

@@ -4,12 +4,14 @@ import useAuth from "@/shared/lib/use-auth.hook";
 import clsx from "clsx";
 import IconUtils from "@/shared/ui/IconUtils";
 import { MatchService } from "@/features/service/lib/match";
-import { Match, User } from "@/types/object";
 
 const ServiceMainHeader = () => {
   const { data: matchDetails, isLoading } = useMatchQuery();
   const { user } = useAuth();
-  const isWrittenMind = MatchService.checkUserWrittenMind(user as User, matchDetails as Match);
+  const isWrittenMind = (() => {
+    if (!user || !matchDetails) return false;
+    return MatchService.checkUserWrittenMind(user, matchDetails);
+  });
 
   if (isLoading && !matchDetails) return null;
 
