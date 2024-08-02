@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import IconUtils from "src/shared/ui/IconUtils";
 import LocalStorage from "@/shared/lib/local-storage";
+import IconUtils from "@/shared/ui/IconUtils";
 
 
 const SplashLoader: React.FC<React.PropsWithChildren> = ({ children }) => {
