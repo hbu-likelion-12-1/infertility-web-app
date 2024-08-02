@@ -2,6 +2,7 @@ import React, { createContext, HTMLAttributes, ReactNode, useContext } from 'rea
 import Button from "@/shared/ui/button";
 import clsx from "clsx";
 import { getRadioTheme } from "@/shared/ui/radio-button/lib/theme.util";
+import IconUtils from "@/shared/ui/IconUtils";
 
 
 export type Item = string | number;
@@ -44,6 +45,7 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   item: Item;
   children: ReactNode;
   theme?: "depression" | "default";
+  radioMode?: boolean;
 }
 
 const RadioButton: React.FC<ButtonProps> = ({
@@ -51,12 +53,24 @@ const RadioButton: React.FC<ButtonProps> = ({
                                               children,
                                               className,
                                               theme = "default",
+                                              radioMode = false,
                                               ...props
                                             }) => {
   const { setter, selected } = useRadioContext();
   const isSelected = selected === item;
 
   const onClickButton = () => setter(item);
+
+  if (radioMode) {
+    return (
+      <button
+        onClick={onClickButton}
+      >
+        {isSelected && <IconUtils.ActiveRadio/>}
+        {!isSelected && <IconUtils.DeActiveRadio/>}
+      </button>
+    );
+  }
 
   return (
     <Button
