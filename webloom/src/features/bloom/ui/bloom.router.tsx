@@ -22,6 +22,7 @@ const BloomRouter = () => {
         </button>
 
         <button
+          onClick={() => alert("준비 중입니다")}
           className={clsx([
             "flex-1 text-center",
             tab === BloomTab.RECOMMENDATION && "text-primary-0 border-b-[3px] border-primary-0",
