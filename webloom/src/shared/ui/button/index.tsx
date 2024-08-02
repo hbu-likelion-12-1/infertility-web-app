@@ -31,7 +31,7 @@ const Button: React.FC<Props> = ({
         "min-h-[56px] flex justify-center items-center",
         getButtonRound(round),
         getButtonTheme(theme),
-        "font-bold",
+        "font-[500]",
         "transition-colors duration-100",
         "shadow-button",
         "flex items-center justify-center px-5 gap-x-5",

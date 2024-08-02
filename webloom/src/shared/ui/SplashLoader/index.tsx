@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import IconUtils from "@/shared/ui/IconUtils";
+import IconUtils from "src/shared/ui/IconUtils";
 import LocalStorage from "@/shared/lib/local-storage";
 
 

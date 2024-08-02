@@ -11,8 +11,9 @@ const OnboardWelcome = () => {
         </div>
         <Announcer
             buttonText="다음"
-
             next={OnBoardPhase.MINDSHARE}
+            currentStep={0} // 현재 단계를 나타내는 prop 추가
+            totalSteps={4}  // 전체 단계를 나타내는 prop 추가
       >
         <section className="flex flex-col text-center text-[20px] py-[40px] ">
           <h3 className="text-black font-[500]">안녕하세요!</h3>

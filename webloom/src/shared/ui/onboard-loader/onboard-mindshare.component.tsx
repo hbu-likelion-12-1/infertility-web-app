@@ -12,6 +12,8 @@ const OnboardMindShare = () => {
           <Announcer
               buttonText="다음"
               next={OnBoardPhase.STRESS}
+              currentStep={1}
+              totalSteps={4}
           >
               <section className="flex flex-col text-center text-[20px] pt-[10px] pb-[80px]">
                   <nav className="text-center flex flex-col items-center justify-center pb-[30px]">

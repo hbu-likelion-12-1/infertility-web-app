@@ -4,15 +4,18 @@ import Button from "@/shared/ui/button";
 import useOnboardPage from "@/shared/ui/onboard-loader/use-onboard.hook";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
+import ProgressIndicator from "@/shared/ui/onboard-loader/progressIndicator.component";
 
 interface Props {
   children: React.ReactNode;
   buttonText: string;
   next: OnBoardPhase;
   isFinal?: boolean;
+  currentStep: number; // 현재 단계를 나타내는 prop 추가
+  totalSteps: number; // 전체 단계를 나타내는 prop 추가
 }
 
-const Announcer: React.FC<Props> = ({ children, buttonText, next, isFinal }) => {
+const Announcer: React.FC<Props> = ({ children, buttonText, next, isFinal, currentStep, totalSteps }) => {
   const { setPhase } = useOnboardPage();
   const router = useRouter();
 
@@ -29,16 +32,23 @@ const Announcer: React.FC<Props> = ({ children, buttonText, next, isFinal }) => 
 
   return (
     <div className={clsx([
+      "fixed",
+      "bottom-0 w-full",
       "z-20",
-      "w-full h-[430px] pt-[36px] pb-[60px] px-[12px] bg-white",
-      "absolute bottom-0 left-0",
+      "bg-white",
       "shadow-onboard",
       "rounded-t-[25px]",
-      "flex flex-col"
+      "flex flex-col",
+      "p-[12px]",
+      "pb-[50px]",
+      "h-[430px]",
+      "max-w-[640px]",
+      "mx-auto"
     ])}>
-      <section className="w-full flex-1">
+      <section className="w-full flex-1 overflow-y-auto mt-4">
         {children}
       </section>
+        <ProgressIndicator steps={totalSteps} currentStep={currentStep} />
       <section>
         <Button onClick={onClickNext} className="w-full">
           {buttonText}

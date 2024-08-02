@@ -13,6 +13,8 @@ const OnboardFinal = () => {
             buttonText="난임 극복 여정 시작하기"
             next={OnBoardPhase.FINAL}
             isFinal={true}
+            currentStep={3} // 현재 단계를 나타내는 prop 추가
+            totalSteps={4}  // 전체 단계를 나타내는 prop 추가
       >
         <section className="flex flex-col text-center text-[20px] py-[40px]">
           <h3 className="text-[#111111] font-[500]">지금 바로 가입하고,</h3>
