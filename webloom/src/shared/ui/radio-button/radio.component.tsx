@@ -43,7 +43,7 @@ const RadioProvider: React.FC<ProviderProps> = ({ items, setter, children, curre
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   item: Item;
-  children: ReactNode;
+  children?: ReactNode;
   theme?: "depression" | "default";
   radioMode?: boolean;
 }

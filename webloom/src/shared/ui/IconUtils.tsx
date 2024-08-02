@@ -21,6 +21,12 @@ import ActiveStorage from "../../../public/icon/nav/active-storage.svg";
 import ActiveRadio from "../../../public/icon/active-radio.svg";
 import DeActiveRadio from "../../../public/icon/deactivate-radio.svg";
 
+import Happy from "../../../public/icon/mood/happy.svg";
+import Good from "../../../public/icon/mood/good.svg";
+import Normal from "../../../public/icon/mood/normal.svg";
+import Bad from "../../../public/icon/mood/bad.svg";
+import Worst from "../../../public/icon/mood/verybad.svg";
+
 
 const IconUtils = {
   Flower,
@@ -43,6 +49,7 @@ const IconUtils = {
   ActiveStorage,
   ActiveRadio,
   DeActiveRadio,
+  Happy, Good, Normal, Bad, Worst,
 };
 
 export default IconUtils;
