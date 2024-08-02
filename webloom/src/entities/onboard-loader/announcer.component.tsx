@@ -1,10 +1,10 @@
 import React from 'react';
 import { OnBoardPhase } from "./constants/enum";
 import Button from "@/shared/ui/button";
-import useOnboardPage from "@/shared/ui/onboard-loader/use-onboard.hook";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
-import ProgressIndicator from "@/shared/ui/onboard-loader/progressIndicator.component";
+import ProgressIndicator from "@/entities/onboard-loader/progressIndicator.component";
+import useOnboardPage from "@/entities/onboard-loader/use-onboard.hook";
 
 interface Props {
   children: React.ReactNode;
@@ -48,7 +48,7 @@ const Announcer: React.FC<Props> = ({ children, buttonText, next, isFinal, curre
       <section className="w-full flex-1 overflow-y-auto mt-4">
         {children}
       </section>
-        <ProgressIndicator steps={totalSteps} currentStep={currentStep} />
+      <ProgressIndicator steps={totalSteps} currentStep={currentStep}/>
       <section>
         <Button onClick={onClickNext} className="w-full">
           {buttonText}

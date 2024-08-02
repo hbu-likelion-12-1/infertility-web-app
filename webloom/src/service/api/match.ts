@@ -9,7 +9,7 @@ export interface MatchApi {
   getMatch: () => Promise<Match | null>;
   create: (code: string) => Promise<Match>;
   provideInviteCode: () => Promise<InviteCode>;
-  getInviteCode: () => Promise<{ inviteCode: InviteCode | null }>;
+  getInviteCode: () => Promise<string | null>;
   getStorageList: () => Promise<Question[]>;
 }
 

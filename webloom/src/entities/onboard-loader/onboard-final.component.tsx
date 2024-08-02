@@ -1,20 +1,20 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import IconUtils from "@/shared/ui/IconUtils";
 import Announcer from "./announcer.component";
-import { OnBoardPhase } from "@/shared/ui/onboard-loader/constants/enum";
+import { OnBoardPhase } from "@/entities/onboard-loader/constants/enum";
 
 const OnboardFinal = () => {
   return (
     <div className="flex flex-col items-center">
-        <div className="mb-[210px]">
-            <IconUtils.Onboard4/>
-        </div>
-        <Announcer
-            buttonText="난임 극복 여정 시작하기"
-            next={OnBoardPhase.FINAL}
-            isFinal={true}
-            currentStep={3} // 현재 단계를 나타내는 prop 추가
-            totalSteps={4}  // 전체 단계를 나타내는 prop 추가
+      <div className="mb-[210px]">
+        <IconUtils.Onboard4/>
+      </div>
+      <Announcer
+        buttonText="난임 극복 여정 시작하기"
+        next={OnBoardPhase.FINAL}
+        isFinal={true}
+        currentStep={3} // 현재 단계를 나타내는 prop 추가
+        totalSteps={4}  // 전체 단계를 나타내는 prop 추가
       >
         <section className="flex flex-col text-center text-[20px] py-[40px]">
           <h3 className="text-[#111111] font-[500]">지금 바로 가입하고,</h3>

@@ -1,19 +1,19 @@
 import React from 'react';
 import IconUtils from "@/shared/ui/IconUtils";
 import Announcer from "./announcer.component";
-import { OnBoardPhase } from "@/shared/ui/onboard-loader/constants/enum";
+import { OnBoardPhase } from "@/entities/onboard-loader/constants/enum";
 
 const OnboardWelcome = () => {
   return (
     <div className="flex flex-col items-center">
-        <div className="mb-[300px]">
-            <IconUtils.Onboard1/>
-        </div>
-        <Announcer
-            buttonText="다음"
-            next={OnBoardPhase.MINDSHARE}
-            currentStep={0} // 현재 단계를 나타내는 prop 추가
-            totalSteps={4}  // 전체 단계를 나타내는 prop 추가
+      <div className="mb-[300px]">
+        <IconUtils.Onboard1/>
+      </div>
+      <Announcer
+        buttonText="다음"
+        next={OnBoardPhase.MINDSHARE}
+        currentStep={0} // 현재 단계를 나타내는 prop 추가
+        totalSteps={4}  // 전체 단계를 나타내는 prop 추가
       >
         <section className="flex flex-col text-center text-[20px] py-[40px] ">
           <h3 className="text-black font-[500]">안녕하세요!</h3>

@@ -1,6 +1,6 @@
 import React from 'react';
 import SplashLoader from "@/shared/ui/SplashLoader";
-import OnboardLoader from "@/shared/ui/onboard-loader/onboard-loader.component";
+import OnboardLoader from "@/entities/onboard-loader/onboard-loader.component";
 
 const StartPoint = () => {
   return (

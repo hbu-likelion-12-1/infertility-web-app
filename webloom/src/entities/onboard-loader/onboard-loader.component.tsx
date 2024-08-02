@@ -2,12 +2,12 @@
 
 import React, { useMemo } from 'react';
 import LocalStorage from "@/shared/lib/local-storage";
-import { OnBoardPhase } from "@/shared/ui/onboard-loader/constants/enum";
-import OnboardWelcome from "@/shared/ui/onboard-loader/welcome.component";
-import useOnboardPage from "@/shared/ui/onboard-loader/use-onboard.hook";
-import OnboardMindShare from "@/shared/ui/onboard-loader/onboard-mindshare.component";
-import OnboardStressCare from "@/shared/ui/onboard-loader/onboard-stress-care.component";
-import OnboardFinal from "@/shared/ui/onboard-loader/onboard-final.component";
+import useOnboardPage from "@/entities/onboard-loader/use-onboard.hook";
+import OnboardWelcome from "@/entities/onboard-loader/welcome.component";
+import OnboardMindShare from "@/entities/onboard-loader/onboard-mindshare.component";
+import OnboardStressCare from "@/entities/onboard-loader/onboard-stress-care.component";
+import OnboardFinal from "@/entities/onboard-loader/onboard-final.component";
+import { OnBoardPhase } from "@/entities/onboard-loader/constants/enum";
 
 
 const OnboardLoader: React.FC<React.PropsWithChildren> = ({ children }) => {

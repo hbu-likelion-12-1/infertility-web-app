@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useLayoutEffect } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AppRootLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
 
@@ -27,6 +28,5 @@ const AppRootLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
     </div>
   );
 };
-
 
 export default AppRootLayout;
