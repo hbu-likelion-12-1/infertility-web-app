@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from 'axios';
 import { toCamel, toSnake } from 'snake-camel';
 
 export const apiClient = axios.create({
-  baseURL: 'http://localhost:8008/api', timeout: 5000, headers: {
+  baseURL: 'http://localhost:8008/api', timeout: 10000, headers: {
     // baseURL: 'http://galaxy4276.asuscomm.com:8008/api', timeout: 5000, headers: {
     'Content-Type': 'application/json',
   },

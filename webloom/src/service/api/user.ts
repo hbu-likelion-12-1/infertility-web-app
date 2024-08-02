@@ -9,7 +9,7 @@ export interface UserApi {
   get: () => Promise<GetUserResponse>;
 }
 
-const ENDPOINT = '/user/';
+const ENDPOINT = '/users/';
 
 export const userApi: UserApi = {
   get() {
