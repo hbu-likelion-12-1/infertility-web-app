@@ -24,7 +24,7 @@ const createYearOptions = () => {
 const createMonthOptions = () => {
   const result: number[] = [];
 
-  for (let i = 1; i <= 12; i++) {
+  for (let i = 0; i < 12; i++) {
     result.push(monthStart + i);
   }
 
@@ -32,7 +32,7 @@ const createMonthOptions = () => {
 };
 
 const createDayOptions = () => {
-  const day = dayjs().date();
+  const day = dayjs().daysInMonth();
   const result: number[] = [];
 
   for (let i = 1; i <= day; i++) {
