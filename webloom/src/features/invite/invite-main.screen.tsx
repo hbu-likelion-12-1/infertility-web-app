@@ -7,9 +7,11 @@ import AppLoading from "@/shared/ui/loading/loading.component";
 import Button from "@/shared/ui/button";
 import InviteCode from "@/features/invite/code.component";
 import clsx from "clsx";
+import { useRouter } from "next/navigation";
 
 const InviteMain = () => {
   const { data: inviteCode, isFetched, refetch } = useInviteCodeQuery();
+  const router = useRouter();
 
   useEffect(() => {
     if (!isFetched) return;
@@ -43,7 +45,10 @@ const InviteMain = () => {
         {/*<Button className="w-full mb-4">*/}
         {/*  배우자에게 초대장 보내기*/}
         {/*</Button>*/}
-        <Button className="w-full">
+        <Button
+          onClick={() => router.push("/invite/classify")}
+          className="w-full"
+        >
           배우자의 코드로 연결하기
         </Button>
       </section>
