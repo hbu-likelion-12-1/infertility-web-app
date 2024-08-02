@@ -11,7 +11,7 @@ const ServiceMainHeader = () => {
   const isWrittenMind = (() => {
     if (!user || !matchDetails) return false;
     return MatchService.checkUserWrittenMind(user, matchDetails);
-  });
+  })();
 
   if (isLoading && !matchDetails) return null;
 

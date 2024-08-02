@@ -11,12 +11,13 @@ const HeaderGlobalNavigationBar = () => {
     if (!pathname) return false;
 
     if (
+      pathname.includes("/invite") ||
       pathname.includes("/join")
     ) {
-      return true;
+      return false;
     }
 
-    return false;
+    return true;
   })();
 
   if (hide) return null;
