@@ -5,10 +5,12 @@ import clsx from "clsx";
 import Input from "@/shared/ui/input/input.component";
 import Button from "@/shared/ui/button";
 import { Server } from "@/service/api";
+import { useRouter } from "next/navigation";
 
 const InviteClassify = () => {
   const [code, setCode] = useState<string>("");
   const disabledMatch = code.length <= 5;
+  const router = useRouter();
 
   const onEnterCode = (e: ChangeEvent<HTMLInputElement>) => {
     setCode(e.target.value);
@@ -17,10 +19,14 @@ const InviteClassify = () => {
   const onMatch = async () => {
     try {
       await Server.Match.create(code);
-    } catch (error) {
-      console.error(error);
+      alert("배우자와 매칭이 수행되었습니다.");
+      router.push("/service");
+    } catch (error: any) {
+      if (error.code === 404) {
+        return alert("존재하지 않는 매칭코드입니다.");
+      }
     }
-  }
+  };
 
   return (
     <article className="w-full h-full flex flex-col">
