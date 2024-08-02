@@ -8,19 +8,33 @@ import useMatchQuery from "@/features/service/query/get-match.query";
 import Radio from "@/shared/ui/radio-button/radio.component";
 import { Emotion } from "@/types/enum";
 import Button from "@/shared/ui/button";
+import { Server } from "@/service/api";
 
 const MindForm = () => {
   const router = useRouter();
-  const { data: matchDetails } = useMatchQuery();
+  const { data: matchDetails, refetch } = useMatchQuery();
   const [content, setContent] = useState("");
   const [emotion, setEmotion] = useState<Emotion>();
   const submitDisabled = !emotion || content.trim().length === 0;
 
   const onClickBack = () => router.push("/service");
 
+  const onEnterContent = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const value = e.target.value;
+    if (value.length > 200) return;
+    setContent(e.target.value);
+  };
+
+
   const onSubmit = async () => {
+    if (!matchDetails?.question.id || !emotion) return;
+    const questionId = matchDetails.question.id;
 
     try {
+      await Server.Question.answerMind(questionId, { emotion, content });
+      alert("마음이 공유되었습니다.");
+      await refetch();
+      router.push("/service");
     } catch (error) {
       console.error(error);
     }
@@ -100,7 +114,7 @@ const MindForm = () => {
         <div className="w-full flex flex-col">
           <textarea
             value={content}
-            onChange={e => setContent(e.target.value)}
+            onChange={onEnterContent}
             className={clsx([
               "w-full min-h-[250px] p-[24px]",
               "rounded-xl resize-none"
@@ -118,6 +132,7 @@ const MindForm = () => {
       <div className="flex-1"/>
       <section className="w-full pb-[60px]">
         <Button
+          onClick={onSubmit}
           theme={submitDisabled ? "disabled" : "primary"}
           className="w-full"
         >
