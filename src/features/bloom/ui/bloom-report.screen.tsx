@@ -68,15 +68,13 @@ const BloomReport = () => {
         ))}
       </section>
 
-      <header className="w-full h-[42px] flex py-[16px] mb-[21px] my-[16px]">
+      <header className="w-full h-[42px] flex flex-col py-[16px] mb-[21px] my-[16px]">
         <h1 className="text-[24px] font-bold">
           주간 부부 감정 추이
         </h1>
 
+        <img src="/images/report.png"/>
       </header>
-      <section className="w-full flex text-center">
-        준비 중입니다.
-      </section>
     </>
   );
 };
