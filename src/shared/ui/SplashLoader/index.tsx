@@ -3,16 +3,14 @@
 import React, { useEffect, useState } from 'react';
 import LocalStorage from "@/shared/lib/local-storage";
 import IconUtils from "@/shared/ui/IconUtils";
+import { useRouter } from "next/navigation";
 
 
 const SplashLoader: React.FC<React.PropsWithChildren> = ({ children }) => {
   const [firstLoaded, setFirstLoaded] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const router = useRouter();
 
-
-  useEffect(() => {
-    const load = LocalStorage.getItem("initial-load");
-    setFirstLoaded(!!load);
-  }, []);
 
   useEffect(() => {
     if (firstLoaded) return;
@@ -21,6 +19,18 @@ const SplashLoader: React.FC<React.PropsWithChildren> = ({ children }) => {
       setFirstLoaded(true);
     }, 2000);
   }, [firstLoaded]);
+
+  useEffect(() => {
+    setMounted(true);
+    const onboardLoad = LocalStorage.getItem("initial-onboard");
+    if (onboardLoad) {
+      return router.push("/login");
+    }
+    const load = LocalStorage.getItem("initial-load");
+    setFirstLoaded(!!load);
+  }, []);
+
+  if (!mounted) return null;
 
   if (firstLoaded) {
     return children;
