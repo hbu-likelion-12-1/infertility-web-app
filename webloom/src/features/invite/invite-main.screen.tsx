@@ -8,9 +8,11 @@ import Button from "@/shared/ui/button";
 import InviteCode from "@/features/invite/code.component";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
+import useMatchQuery from "@/features/service/query/get-match.query";
 
 const InviteMain = () => {
   const { data: inviteCode, isFetched, refetch } = useInviteCodeQuery();
+  const { data: matchDetails } = useMatchQuery();
   const router = useRouter();
 
   useEffect(() => {
@@ -23,6 +25,12 @@ const InviteMain = () => {
       }
     })();
   }, [isFetched]);
+
+  useEffect(() => {
+    if (matchDetails) {
+      router.push("/service");
+    }
+  }, [matchDetails]);
 
   if (!inviteCode) return <AppLoading/>;
 

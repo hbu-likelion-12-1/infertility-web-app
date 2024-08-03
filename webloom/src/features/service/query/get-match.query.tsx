@@ -6,6 +6,7 @@ const useMatchQuery = () => {
   return useQuery({
     queryKey: ["match_details", "get"],
     queryFn: Server.Match.getMatch,
+    refetchInterval: 5000,
   });
 };
 
