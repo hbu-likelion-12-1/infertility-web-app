@@ -42,8 +42,8 @@ const ServiceMainHeader = () => {
         ])}
       >
         <h4 className="text-[14px] text-[#333333]">오늘의 마음 공유 질문</h4>
-        <h2 className="text-[18px] font-bold">{matchDetails?.question.content}</h2>
-        <div className="right-0 top-[-64px] absolute">
+        <h2 className="text-[18px] font-bold pt-[20px]">{matchDetails?.question.content}</h2>
+        <div className="right-0 top-[-84px] absolute">
           <IconUtils.BigFlower/>
         </div>
       </section>
