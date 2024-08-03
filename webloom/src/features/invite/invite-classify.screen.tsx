@@ -18,7 +18,7 @@ const InviteClassify = () => {
 
   const onMatch = async () => {
     try {
-      await Server.Match.create(code);
+      await Server.Match.create(code.trim());
       alert("배우자와 매칭이 수행되었습니다.");
       router.push("/service");
     } catch (error: any) {

@@ -21,6 +21,8 @@ const ServiceMain = () => {
     if (!confirm) return;
     await Server.Kakao.removeTestData();
     localStorage.removeItem("user-store");
+    localStorage.removeItem("initial-onboard");
+    localStorage.removeItem("initial-load");
     localStorage.removeItem("access");
     router.push("/login");
   }
