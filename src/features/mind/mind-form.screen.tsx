@@ -49,7 +49,7 @@ const MindFormScreen: React.FC<MindFormProps> = () => {
   if (!matchDetails) return null;
 
   return (
-    <article className="w-full h-full flex flex-col px-[18px]">
+    <article className="w-full h-full overflow-y-scroll overflow-x-hidden flex flex-col px-[18px]">
       <header className="w-full h-[42px] flex py-[16px] my-[16px]">
         <button
           onClick={onClickBack}
@@ -136,7 +136,7 @@ const MindFormScreen: React.FC<MindFormProps> = () => {
       </section>
 
       <div className="flex-1"/>
-      <section className="w-full pb-[60px]">
+      <section className="w-full pt-3 pb-[60px]">
         <Button
           onClick={onSubmit}
           theme={submitDisabled ? "disabled" : "primary"}
