@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, Suspense } from 'react';
 import useAuth from "@/shared/lib/use-auth.hook";
 import AppLoading from "@/shared/ui/loading/loading.component";
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -38,7 +38,10 @@ const KakaoCallbackPage = () => {
     })();
   }, [login, router, searchParams]);
 
-  return <AppLoading/>;
+  return (
+    <Suspense>
+      <AppLoading/>
+    </Suspense>);
 };
 
 export default KakaoCallbackPage;
