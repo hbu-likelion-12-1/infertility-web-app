@@ -7,6 +7,7 @@ import Radio from "@/shared/ui/radio-button/radio.component";
 import { Emotion } from "@/types/enum";
 import useMindQuery from "@/features/mind/query/mind.query";
 import AppLoading from "@/shared/ui/loading/loading.component";
+import useMatchQuery from "@/features/service/query/get-match.query";
 
 
 interface Props {
@@ -15,8 +16,9 @@ interface Props {
 
 const MindForm: React.FC<Props> = ({ id }) => {
   const { data: mindDetails, isLoading } = useMindQuery(id);
+  const { data: matchDetails } = useMatchQuery();
 
-  if (!mindDetails || isLoading) return <AppLoading/>;
+  if (!mindDetails || isLoading || !matchDetails) return <AppLoading/>;
 
   return (
     <>
@@ -74,7 +76,7 @@ const MindForm: React.FC<Props> = ({ id }) => {
           "flex flex-col"
         ])}
       >
-        <h1 className="text-[18px] font-bold pb-4">{mindDetails.content}</h1>
+        <h1 className="text-[18px] font-bold pb-4">{matchDetails.question.content}</h1>
 
         <div className="w-full flex flex-col">
           <textarea
