@@ -8,7 +8,7 @@ const BloomRecommendation = () => {
   if (!user) return null;
 
   return (
-    <article className="w-full flex flex-col h-full">
+    <article className="w-full flex flex-col h-full overflow-y-scroll overflow-x-hidden">
       <h1 className="text-[24px] font-bold mt-[32px]">Bloom이 추천해요!</h1>
       <section
         className="pt-[30px] h-[142px] flex flex-col text-[24px] w-full relative text-slate-700 justify-end">

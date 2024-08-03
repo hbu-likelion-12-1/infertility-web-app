@@ -30,7 +30,7 @@ const ServiceMain = () => {
   if (isLoading || !matchDetails) return <AppLoading/>;
 
   return (
-    <article className="w-full h-full flex flex-col">
+    <article className="w-full h-full flex flex-col overflow-y-scroll overflow-x-scroll">
       <ServiceMainHeader/>
       <div className="w-full h-full flex flex-col py-[24px] pb-[72px] px-[20px]">
         <MindShareInteraction/>

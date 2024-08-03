@@ -22,7 +22,7 @@ const AppRootLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
       className="min-h-[calc(var(--vh,_1vh)*100)] h-[calc(var(--vh,_1vh)*100)] flex items-center justify-center bg-gray-100">
       <div
         id="root"
-        className="bg-white h-full w-full max-w-[640px] flex flex-col relative">
+        className="bg-white h-full w-full max-w-[640px] flex flex-col relative overflow-y-scroll overflow-x-hidden">
         {children}
       </div>
     </div>
