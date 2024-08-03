@@ -12,6 +12,7 @@ export interface KakaoApi {
   getKakaoPublishAuthCodeUrl: () => Promise<{ url: string }>;
   login: (authCode: string) => Promise<User | undefined>;
   testLogin: (type: "husband" | "wife") => Promise<User>;
+  removeTestData: () => Promise<void>;
   signup: (form: SignupForm) => Promise<User>;
 }
 
@@ -47,5 +48,8 @@ export const kakaoApi: KakaoApi = {
       localStorage.setItem("access", accessToken);
     }
     return user as User;
-  }
+  },
+  removeTestData() {
+    return apiClient.post('/users/test/');
+  },
 };
