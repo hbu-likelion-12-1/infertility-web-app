@@ -18,8 +18,9 @@ const StartPoint = () => {
 
   return (
     <>
-      <SplashLoader/>
-      <OnboardLoader/>
+      <SplashLoader>
+        <OnboardLoader/>
+      </SplashLoader>
     </>
   );
 };
