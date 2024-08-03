@@ -1,37 +1,41 @@
-# Infertility Web App
+This is a [Next.js](https://nextjs.org/) project bootstrapped
+with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Git branching model
+## Getting Started
 
-<aside>
-📌 **Base 브랜치(upstream)의 종류**
+First, run the development server:
 
-- `main` - 릴리즈
-- `develop` - 개발
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-**Local 브랜치의 종류**
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- `feature/{ticket|name}` - 계획된 피쳐 개발(T1)
-- `fix/{ticket|name}` - 계획된 패치 적용(T2)
-- `hotfix/{ticket|name}` - 계획되지 않은 긴급 수정(T3)
+You can start editing the page by modifying `app/screen.tsx`. The page auto-updates as you edit the file.
 
-</aside>
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and
+load Inter, a custom Google Font.
 
-## Commit guide
+## Learn More
 
-- `feat:` - 새로운 기능에 대한 커밋
-- `fix:` - 버그 수정에 대한 커밋
-- `build:` - 빌드 관련 파일 수정에 대한 커밋
-- `chore:` - 그 외 자잘한 수정에 대한 커밋
-- `docs:` - 문서 수정에 대한 커밋
-- `style:` - 코드 스타일 혹은 포맷 등에 관한 커밋
-- `refactor:` - 코드 리팩토링에 대한 커밋
-- `test:` - 테스트 코드 수정에 대한 커밋
+To learn more about Next.js, take a look at the following resources:
 
-## Code review guide
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-필요한 경우 아래의 말머리를 사용해 주세요.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions
+are welcome!
 
-- [질문] - 단순 질문. 해결되지 않아도 머지 가능
-- [의견] - 단순 간단 의견. 해결되지 않아도 머지 가능
-- [변경요청] - 동작하지 않는 부분이나 잘못된 부분이 있을 때(반드시 수정 필요)
+## Deploy on Vercel
 
+The easiest way to deploy your Next.js app is to use
+the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
+from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
