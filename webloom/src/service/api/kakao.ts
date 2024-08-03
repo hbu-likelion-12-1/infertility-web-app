@@ -11,6 +11,7 @@ export interface LoginResponse {
 export interface KakaoApi {
   getKakaoPublishAuthCodeUrl: () => Promise<{ url: string }>;
   login: (authCode: string) => Promise<User | undefined>;
+  testLogin: (type: "husband" | "wife") => Promise<User>;
   signup: (form: SignupForm) => Promise<User>;
 }
 
@@ -40,4 +41,11 @@ export const kakaoApi: KakaoApi = {
     }
     return user as User;
   },
+  async testLogin(type) {
+    const { accessToken, user } = await apiClient.get(`/users/test/?type=${type}`) as LoginResponse;
+    if (accessToken) {
+      localStorage.setItem("access", accessToken);
+    }
+    return user as User;
+  }
 };

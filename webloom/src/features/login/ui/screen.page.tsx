@@ -1,19 +1,28 @@
 "use client";
 
 import React from 'react';
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import IconUtils from "@/shared/ui/IconUtils";
 import Button from "@/shared/ui/button";
 import { Server } from "@/service/api";
+import useAuth from "@/shared/lib/use-auth.hook";
 
 const LoginScreen = () => {
   const pathname = usePathname();
+  const { login } = useAuth();
+  const router = useRouter();
 
   const onClickLogin = async () => {
     if (!pathname) return;
     const { url } = await Server.Kakao.getKakaoPublishAuthCodeUrl();
     localStorage.setItem("referrer", pathname);
     window.location.href = url;
+  };
+
+  const onClickTestLogin = async (type: "husband" | "wife") => {
+    const user = await Server.Kakao.testLogin(type);
+    login(user);
+    router.push("/router");
   };
 
   return (
@@ -49,6 +58,24 @@ const LoginScreen = () => {
             </div>
           </div>
         </Button>
+      </section>
+
+      <section className="w-full text-slate-400 text-center pt-[50px] flex flex-col items-center">
+        <span>현재 애플리케이션은 테스트 모드입니다.</span>
+        <span>테스트 계정으로 로그인을 수행할 수 있어요!</span>
+
+        <nav className="flex flex-col gap-y-3 w-[200px] pt-[24px]">
+          <Button
+            onClick={() => onClickTestLogin("wife")}
+          >
+            아내로 로그인
+          </Button>
+          <Button
+            onClick={() => onClickTestLogin("husband")}
+          >
+            남편으로 로그인
+          </Button>
+        </nav>
       </section>
 
     </article>
