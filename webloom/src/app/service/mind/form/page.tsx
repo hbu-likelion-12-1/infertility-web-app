@@ -1,8 +1,8 @@
 import React from 'react';
-import MindForm from "@/features/mind/mind-form.screen";
+import MindFormScreen from "@/features/mind/mind-form.screen";
 
 const MindFormPage = () => {
-  return <MindForm/>;
+  return <MindFormScreen/>;
 };
 
 export default MindFormPage;

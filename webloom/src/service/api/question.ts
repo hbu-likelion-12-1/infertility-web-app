@@ -1,6 +1,6 @@
 import { Mind, Question } from "@/types/object";
 import { apiClient } from "./client";
-import { Emotion } from "@/types/enum.ts";
+import { Emotion } from "@/types/enum";
 
 export interface QuestionApi {
   create: (matchId: number) => Promise<Question>;
@@ -9,7 +9,7 @@ export interface QuestionApi {
   uploadVoice: (questionId: number, data: Blob) => Promise<Question>;
 }
 
-interface AnswerBody {
+export interface AnswerBody {
   content: string;
   emotion: Emotion;
 }

@@ -10,7 +10,10 @@ import { Emotion } from "@/types/enum";
 import Button from "@/shared/ui/button";
 import { Server } from "@/service/api";
 
-const MindForm = () => {
+interface MindFormProps {
+}
+
+const MindFormScreen: React.FC<MindFormProps> = () => {
   const router = useRouter();
   const { data: matchDetails, refetch } = useMatchQuery();
   const [content, setContent] = useState("");
@@ -25,6 +28,9 @@ const MindForm = () => {
     setContent(e.target.value);
   };
 
+  const onChangeEmotion = (em: Emotion) => {
+    setEmotion(em);
+  };
 
   const onSubmit = async () => {
     if (!matchDetails?.question.id || !emotion) return;
@@ -68,7 +74,7 @@ const MindForm = () => {
         <Radio.Provider
           current={emotion}
           items={[Emotion.NICE, Emotion.GOOD, Emotion.NORMAL, Emotion.BAD, Emotion.WORST]}
-          setter={em => setEmotion(em as Emotion)}
+          setter={v => onChangeEmotion(v as Emotion)}
         >
           <nav className="w-full flex gap-x-[18px] pt-[20px]">
             {/* TODO: ㅋㅋ 하드코딩 수정하기 */}
@@ -143,4 +149,4 @@ const MindForm = () => {
   );
 };
 
-export default MindForm;
+export default MindFormScreen;
