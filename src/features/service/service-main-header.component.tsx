@@ -26,7 +26,7 @@ const ServiceMainHeader = () => {
     >
       <section className="flex flex-col w-full">
         <h1 className="font-bold text-[32px]">{user?.username}님,</h1>
-        <span className="text-[20px]">
+        <span className="text-[20px] text-black">
           {isWrittenMind && "마음 공유를 완료하였습니다."}
           {!isWrittenMind && "오늘의 마음을 공유해주세요."}
         </span>
@@ -42,7 +42,7 @@ const ServiceMainHeader = () => {
         ])}
       >
         <h4 className="text-[14px] text-[#333333]">오늘의 마음 공유 질문</h4>
-        <h2 className="text-[18px] font-bold pt-[20px]">{matchDetails?.question.content}</h2>
+        <h2 className="text-[18px] text-black font-bold pt-[20px]">{matchDetails?.question.content}</h2>
         <div className="right-0 top-[-84px] absolute">
           <IconUtils.BigFlower/>
         </div>

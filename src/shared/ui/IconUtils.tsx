@@ -29,6 +29,7 @@ import Worst from "../../../public/icon/mood/verybad.svg";
 
 import VoiceComplete from "../../../public/icon/voice-complete.svg";
 import VoiceReady from "../../../public/icon/voice-ready.svg";
+import Geo from "../../../public/icon/geo.svg";
 
 
 const IconUtils = {
@@ -54,6 +55,7 @@ const IconUtils = {
   DeActiveRadio,
   Happy, Good, Normal, Bad, Worst,
   VoiceReady, VoiceComplete,
+  Geo,
 };
 
 export default IconUtils;

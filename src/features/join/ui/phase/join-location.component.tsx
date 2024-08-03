@@ -29,7 +29,7 @@ const JoinLocation = () => {
   };
 
   useEffect(() => {
-    const { city, town, region } = location;
+    const { city, region } = location;
     if (region && !city) {
       const cities = Cities[region as any].map((v: string) => ({
         label: v,

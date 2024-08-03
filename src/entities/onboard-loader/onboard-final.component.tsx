@@ -16,7 +16,7 @@ const OnboardFinal = () => {
         currentStep={3} // 현재 단계를 나타내는 prop 추가
         totalSteps={4}  // 전체 단계를 나타내는 prop 추가
       >
-        <section className="flex flex-col text-center text-[20px] py-[40px]">
+        <section className="flex flex-col text-center text-[20px] py-[40px] text-black">
           <h3 className="text-[#111111] font-[500]">지금 바로 가입하고,</h3>
           <h3 className="text-primary-0 font-[500]">AI Bloom과 함께</h3>
           <h3 className="text-primary-0 font-[500]">난임 극복을 위한 여정에</h3>

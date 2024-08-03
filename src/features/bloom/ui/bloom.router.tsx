@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { BloomTab } from "@/features/bloom/constant/enum";
 import BloomReport from "@/features/bloom/ui/bloom-report.screen";
 import clsx from "clsx";
+import BloomRecommendation from "@/features/bloom/ui/bloom-recommendation.screen";
 
 const BloomRouter = () => {
   const [tab, setTab] = useState(BloomTab.REPORT);
@@ -12,6 +13,7 @@ const BloomRouter = () => {
     <article className="w-full h-full flex flex-col px-[20px]">
       <section className="w-full h-[48px] flex">
         <button
+          onClick={() => setTab(BloomTab.REPORT)}
           className={clsx([
             "flex-1 text-center",
             tab === BloomTab.REPORT && "text-primary-0 border-b-[3px] border-primary-0",
@@ -22,7 +24,7 @@ const BloomRouter = () => {
         </button>
 
         <button
-          onClick={() => alert("준비 중입니다")}
+          onClick={() => setTab(BloomTab.RECOMMENDATION)}
           className={clsx([
             "flex-1 text-center",
             tab === BloomTab.RECOMMENDATION && "text-primary-0 border-b-[3px] border-primary-0",
@@ -34,6 +36,7 @@ const BloomRouter = () => {
       </section>
 
       {tab === BloomTab.REPORT && <BloomReport/>}
+      {tab === BloomTab.RECOMMENDATION && <BloomRecommendation/>}
     </article>
   );
 };

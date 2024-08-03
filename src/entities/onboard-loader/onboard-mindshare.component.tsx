@@ -15,7 +15,7 @@ const OnboardMindShare = () => {
         currentStep={1}
         totalSteps={4}
       >
-        <section className="flex flex-col text-center text-[20px] pt-[5px] pb-[40px]">
+        <section className="flex flex-col text-center text-[20px] pt-[5px] pb-[40px] text-black">
           <nav className="text-center flex flex-col items-center justify-center pb-[30px]">
             <h1 className="text-black font-bold text-[28px]">마음 공유로</h1>
             <h1 className="font-bold text-primary-0 text-[28px]">서로 힘이 되어줘요</h1>
