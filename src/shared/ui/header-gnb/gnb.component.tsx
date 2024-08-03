@@ -2,11 +2,13 @@
 
 import React from 'react';
 import clsx from "clsx";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import IconUtils from "@/shared/ui/IconUtils";
 
 const HeaderGlobalNavigationBar = () => {
   const pathname = usePathname();
+  const router = useRouter();
+
   const hide = (() => {
     if (!pathname) return false;
 
@@ -29,7 +31,7 @@ const HeaderGlobalNavigationBar = () => {
         "flex items-center justify-between"
       ])}
     >
-      <button>
+      <button onClick={() => router.back()}>
         <IconUtils.Previous/>
       </button>
 
@@ -38,7 +40,7 @@ const HeaderGlobalNavigationBar = () => {
       </button>
 
       <button>
-        <IconUtils.Close/>
+        {/*<IconUtils.Close/>*/}
       </button>
     </header>
   );
