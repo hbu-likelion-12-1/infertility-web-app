@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { usePathname, useRouter } from "next/navigation";
 import IconUtils from "@/shared/ui/IconUtils";
 import Button from "@/shared/ui/button";
@@ -9,7 +9,7 @@ import useAuth from "@/shared/lib/use-auth.hook";
 
 const LoginScreen = () => {
   const pathname = usePathname();
-  const { login } = useAuth();
+  const { login, user, logout } = useAuth();
   const router = useRouter();
 
   const onClickLogin = async () => {
@@ -24,6 +24,12 @@ const LoginScreen = () => {
     login(user);
     router.push("/router");
   };
+
+  useEffect(() => {
+    if (user) {
+      logout();
+    }
+  }, [user]);
 
   return (
     <article className="flex h-full flex-col px-[45px] justify-center">
