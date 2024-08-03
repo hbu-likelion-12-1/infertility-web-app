@@ -3,22 +3,26 @@ import useMatchQuery from "@/features/service/query/get-match.query";
 import clsx from "clsx";
 import IconUtils from "@/shared/ui/IconUtils";
 import { useRouter } from "next/navigation";
+import useAuth from "@/shared/lib/use-auth.hook";
 
 
 const MindShareInteraction = () => {
   const { data: matchDetails, isLoading } = useMatchQuery();
   const router = useRouter();
+  const { user } = useAuth();
   const isWifeWrittenMind = !!matchDetails?.wife?.mindId;
   const isHusbandWrittenMind = !!matchDetails?.husband?.mindId;
 
   const redirectMindForm = () => router.push("/service/mind/form");
 
   const onClickWifeMind = () => {
+    if (user?.sex === "M") return alert("아직 아내분께서 답변을 작성하지 않았습니다. 조금만 기다려주세요.");
     if (!isWifeWrittenMind) return redirectMindForm();
     router.push(`/service/mind/${matchDetails?.wife.mindId}`);
   };
 
   const onClickHusbandMind = () => {
+    if (user?.sex === "F") return alert("아직 남편분께서 답변을 작성하지 않았습니다. 조금만 기다려주세요.");
     if (!isHusbandWrittenMind) return redirectMindForm();
     router.push(`/service/mind/${matchDetails?.husband.mindId}`);
   };
