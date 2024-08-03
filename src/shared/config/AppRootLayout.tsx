@@ -1,11 +1,13 @@
 'use client';
 
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AppRootLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
+  const [mounted, setMounted] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
+    setMounted(true);
     const setVh = () => {
       const vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -16,6 +18,8 @@ const AppRootLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
 
     return () => window.removeEventListener('resize', setVh);
   }, []);
+
+  if (!mounted) return null;
 
   return (
     <div

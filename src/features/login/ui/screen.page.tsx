@@ -29,7 +29,7 @@ const LoginScreen = () => {
     if (user) {
       logout();
     }
-  }, [user]);
+  }, []);
 
   return (
     <article className="flex h-full flex-col px-[45px] justify-center">

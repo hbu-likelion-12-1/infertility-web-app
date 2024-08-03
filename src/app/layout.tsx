@@ -1,5 +1,4 @@
 import React from "react";
-import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import clsx from "clsx";
@@ -8,10 +7,6 @@ import QueryProvider from "@/shared/config/QueryProvider";
 import HeaderGlobalNavigationBar from "@/shared/ui/header-gnb/gnb.component";
 import FooterGlobalNavigationBar from "@/shared/ui/footer-gnb/gnb.component";
 
-
-export const metadata: Metadata = {
-  title: "WeBloom",
-};
 
 export default function RootLayout({
                                      children,
@@ -24,13 +19,13 @@ export default function RootLayout({
       id="root"
       className={clsx([pretendard.className, pretendard.variable, "h-full"])}
     >
-    <QueryProvider>
-      <AppRootLayout>
+    <AppRootLayout>
+      <QueryProvider>
         <HeaderGlobalNavigationBar/>
         {children}
         <FooterGlobalNavigationBar/>
-      </AppRootLayout>
-    </QueryProvider>
+      </QueryProvider>
+    </AppRootLayout>
     </body>
     </html>
   );

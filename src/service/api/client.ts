@@ -30,7 +30,7 @@ apiClient.interceptors.response.use((res) => toCamel(res.data) as AxiosResponse,
     localStorage.removeItem('access');
     localStorage.removeItem('refresh');
     localStorage.removeItem('user-store');
-    location.href = '/';
+    location.href = '/login';
   }
   return Promise.reject({ ...err.response.data, code: statusCode });
 },);

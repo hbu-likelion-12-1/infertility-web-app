@@ -6,9 +6,13 @@ import IconUtils from "@/shared/ui/IconUtils";
 
 
 const SplashLoader: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const [firstLoaded, setFirstLoaded] = useState(() => {
-    return LocalStorage.getItem("initial-load") !== null;
-  });
+  const [firstLoaded, setFirstLoaded] = useState(false);
+
+
+  useEffect(() => {
+    const load = LocalStorage.getItem("initial-load");
+    setFirstLoaded(!!load);
+  }, []);
 
   useEffect(() => {
     if (firstLoaded) return;

@@ -29,7 +29,8 @@
       "@public": [
         "./public/*"
       ]
-    }
+    },
+    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",
