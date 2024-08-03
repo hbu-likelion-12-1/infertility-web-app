@@ -11,6 +11,8 @@ const VoiceShareInteraction: React.FC<Props> = ({ match }) => {
   const husbandUploaded = !!match.question.maleAudioUrl;
   const wifeUploaded = !!match.question.femaleAudioUrl;
 
+  const onClickReady = () => alert("준비 중입니다.");
+
   return (
     <>
       <section className="flex flex-col text-[20px] font-bold gap-y-2">
@@ -22,7 +24,9 @@ const VoiceShareInteraction: React.FC<Props> = ({ match }) => {
         <nav className="flex flex-1 max-w-[200px] flex-col items-center">
           <span className="text-[16px] font-bold pb-2.5">아내</span>
           <Button
-            className="w-full h-[120px] rounded-[50px] bg-[#FDEFE6] shadow-button"
+            onClick={onClickReady}
+            theme="secondary"
+            className="w-full h-[120px] rounded-[50px] shadow-button"
           >
             {wifeUploaded && <IconUtils.VoiceComplete/>}
             {!wifeUploaded && <IconUtils.VoiceReady/>}
@@ -32,7 +36,9 @@ const VoiceShareInteraction: React.FC<Props> = ({ match }) => {
         <nav className="flex flex-1 max-w-[200px] flex-col items-center">
           <span className="text-[16px] font-bold pb-2.5">남편</span>
           <Button
-            className="w-full h-[120px] rounded-[50px] bg-[#FDEFE6] shadow-button"
+            onClick={onClickReady}
+            theme="secondary"
+            className="w-full h-[120px] rounded-[50px] shadow-button"
           >
             {husbandUploaded && <IconUtils.VoiceComplete/>}
             {!husbandUploaded && <IconUtils.VoiceReady/>}
