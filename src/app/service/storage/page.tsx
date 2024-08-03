@@ -1,11 +1,8 @@
 import React from 'react';
+import StoreScreen from "@/features/store/store.screen";
 
 const StoragePage = () => {
-  return (
-    <article className="w-full h-full flex flex-col items-center justify-center">
-      <span>준비 중입니다..</span>
-    </article>
-  );
+  return <StoreScreen/>;
 };
 
 export default StoragePage;

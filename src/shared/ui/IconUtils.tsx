@@ -10,6 +10,7 @@ import Kakao from "../../../public/icon/kakao-icon.svg";
 import Close from "../../../public/icon/x.svg";
 import GnbTitle from "../../../public/icon/gnb-title.svg";
 import Next from "../../../public/icon/next.svg";
+import NextPrimary from "../../../public/icon/next-primary.svg";
 
 import DeActiveHome from "../../../public/icon/nav/deactive-home.svg";
 import DeActiveFlower from "../../../public/icon/nav/deactive-flower.svg";
@@ -43,6 +44,7 @@ const IconUtils = {
   SmallBloom,
   Kakao,
   Next,
+  NextPrimary,
   Close,
   GnbTitle,
   DeActiveHome,
