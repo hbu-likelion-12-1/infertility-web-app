@@ -16,13 +16,13 @@ const MindShareInteraction = () => {
   const redirectMindForm = () => router.push("/service/mind/form");
 
   const onClickWifeMind = () => {
-    if (user?.sex === "M") return alert("아직 아내분께서 답변을 작성하지 않았습니다. 조금만 기다려주세요.");
+    if (user?.sex === "M" && !isWifeWrittenMind) return alert("아직 아내분께서 답변을 작성하지 않았습니다. 조금만 기다려주세요.");
     if (!isWifeWrittenMind) return redirectMindForm();
     router.push(`/service/mind/${matchDetails?.wife.mindId}`);
   };
 
   const onClickHusbandMind = () => {
-    if (user?.sex === "F") return alert("아직 남편분께서 답변을 작성하지 않았습니다. 조금만 기다려주세요.");
+    if (user?.sex === "F" && !isHusbandWrittenMind) return alert("아직 남편분께서 답변을 작성하지 않았습니다. 조금만 기다려주세요.");
     if (!isHusbandWrittenMind) return redirectMindForm();
     router.push(`/service/mind/${matchDetails?.husband.mindId}`);
   };
