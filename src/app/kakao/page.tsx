@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useEffect, useRef } from 'react';
-import { useRouter, useSearchParams } from "next/navigation";
-import { Server } from "@/service/api";
 import useAuth from "@/shared/lib/use-auth.hook";
 import AppLoading from "@/shared/ui/loading/loading.component";
+import { useRouter, useSearchParams } from 'next/navigation';
+import { Server } from '@/service/api';
 
 const KakaoCallbackPage = () => {
   const router = useRouter();
