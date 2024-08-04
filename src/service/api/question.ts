@@ -7,11 +7,17 @@ export interface QuestionApi {
   answerMind: (questionId: number, body: AnswerBody) => Promise<void>;
   getMind: (mindId: number) => Promise<Mind>;
   uploadVoice: (questionId: number, data: Blob) => Promise<Question>;
+  getBothMinds: (questionId: string) => Promise<BothMind>;
 }
 
 export interface AnswerBody {
   content: string;
   emotion: Emotion;
+}
+
+interface BothMind {
+  husband: Mind;
+  wife: Mind;
 }
 
 const ENDPOINT = '/question';
@@ -34,5 +40,8 @@ export const questionApi: QuestionApi = {
         "Content-Type": "multipart/form-data",
       },
     });
-  }
+  },
+  getBothMinds(questionId) {
+    return apiClient.get(`${ENDPOINT}/mind/both/${questionId}/`)
+  },
 };

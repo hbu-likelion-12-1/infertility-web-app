@@ -15,5 +15,5 @@ export const parseDayToKor = (day: number) => korDay[day];
 export const dayToDate = (d: string) => {
   const o = dayjs(d);
   const day = parseDayToKor(o.day());
-  return o.format("YY.MM.DD") + day;
+  return `${o.format("YY.MM.DD")}.${day}`;
 };
