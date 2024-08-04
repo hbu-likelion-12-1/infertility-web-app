@@ -2,16 +2,22 @@ import React from 'react';
 import { Question } from "@/types/object";
 import clsx from "clsx";
 import IconUtils from "@/shared/ui/IconUtils";
+import { useRouter } from "next/navigation";
 
 interface Props {
   data: Question;
 }
 
 const Storage: React.FC<Props> = ({ data }) => {
-  const { content } = data;
+  const { content, id } = data;
+  const router = useRouter();
+
+  const onClickStorage = (questionId: string) =>
+    router.push(`/mind/both/${questionId}`)
 
   return (
     <button
+      onClick={() => onClickStorage(id)}
       className={clsx([
         "w-full p-[24px]",
         "flex justify-between shadow-card",
