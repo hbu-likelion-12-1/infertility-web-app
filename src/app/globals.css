@@ -45,3 +45,7 @@ body {
 .PageLayout {
     @apply flex flex-col w-full h-full overflow-y-scroll overflow-x-hidden;
 }
+
+.FlexCol {
+    @apply flex flex-col;
+}

@@ -42,6 +42,6 @@ export const questionApi: QuestionApi = {
     });
   },
   getBothMinds(questionId) {
-    return apiClient.get(`${ENDPOINT}/mind/both/${questionId}/`)
+    return apiClient.get(`${ENDPOINT}/mind/both/${questionId}/`);
   },
 };

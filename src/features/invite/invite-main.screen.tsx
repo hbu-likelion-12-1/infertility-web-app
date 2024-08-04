@@ -9,6 +9,7 @@ import InviteCode from "@/features/invite/code.component";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
 import useMatchQuery from "@/features/service/query/get-match.query";
+import Typo from "@/shared/ui/typography/typo.component";
 
 const InviteMain = () => {
   const { data: inviteCode, isFetched, refetch } = useInviteCodeQuery();
@@ -38,10 +39,10 @@ const InviteMain = () => {
     <article className="w-full h-full flex flex-col">
       <section className={clsx([
         "flex flex-col items-center text-center",
-        "text-[20px] font-bold pt-[56px]"
+        "pt-[56px]"
       ])}>
-        <h1>부부 연결을 하고</h1>
-        <h1>마음 공유를 시작해보세요.</h1>
+        <Typo size="24" bold>부부 연결을 하고</Typo>
+        <Typo size="24" bold>마음 공유를 시작해보세요.</Typo>
       </section>
 
       <section className="flex-1 flex flex-col items-center justify-center">

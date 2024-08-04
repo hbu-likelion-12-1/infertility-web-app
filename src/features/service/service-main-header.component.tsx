@@ -4,6 +4,7 @@ import useAuth from "@/shared/lib/use-auth.hook";
 import clsx from "clsx";
 import IconUtils from "@/shared/ui/IconUtils";
 import { MatchService } from "@/features/service/lib/match";
+import Typo from "@/shared/ui/typography/typo.component";
 
 const ServiceMainHeader = () => {
   const { data: matchDetails, isLoading } = useMatchQuery();
@@ -25,11 +26,11 @@ const ServiceMainHeader = () => {
       ])}
     >
       <section className="flex flex-col w-full">
-        <h1 className="font-bold text-[32px]">{user?.username}님,</h1>
-        <span className="text-[20px] text-black">
+        <Typo size="32" bold>{user?.username}님,</Typo>
+        <Typo size="21">
           {isWrittenMind && "마음 공유를 완료하였습니다."}
           {!isWrittenMind && "오늘의 마음을 공유해주세요."}
-        </span>
+        </Typo>
       </section>
 
       <section className="flex-1"/>
@@ -41,8 +42,8 @@ const ServiceMainHeader = () => {
           "flex flex-col rounded-[25px]",
         ])}
       >
-        <h4 className="text-[14px] text-[#333333]">오늘의 마음 공유 질문</h4>
-        <h2 className="text-[18px] text-black font-bold pt-[20px]">{matchDetails?.question.content}</h2>
+        <Typo size="14">오늘의 마음 공유 질문</Typo>
+        <Typo size="18" className="pt-[20px]" bold>{matchDetails?.question.content}</Typo>
         <div className="right-0 top-[-84px] absolute">
           <IconUtils.BigFlower/>
         </div>

@@ -6,6 +6,7 @@ import Input from "@/shared/ui/input/input.component";
 import Button from "@/shared/ui/button";
 import { Server } from "@/service/api";
 import { useRouter } from "next/navigation";
+import Typo from "@/shared/ui/typography/typo.component";
 
 const InviteClassify = () => {
   const [code, setCode] = useState<string>("");
@@ -32,9 +33,9 @@ const InviteClassify = () => {
     <article className="w-full h-full flex flex-col">
       <section className={clsx([
         "flex flex-col items-center text-center",
-        "text-[20px] font-bold pt-[56px]"
+        "pt-[56px]"
       ])}>
-        <h1>부부 코드를 입력해주세요</h1>
+        <Typo size="24" bold>부부 코드를 입력해주세요</Typo>
       </section>
 
       <section className="flex-1 flex flex-col items-center w-full pt-[52px] px-[12px]">

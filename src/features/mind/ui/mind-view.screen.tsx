@@ -4,6 +4,7 @@ import React from 'react';
 import IconUtils from "@/shared/ui/IconUtils";
 import { useRouter } from "next/navigation";
 import MindForm from "@/features/mind/ui/mind-form.component";
+import Typo from "@/shared/ui/typography/typo.component";
 
 const MindView = ({ id }: { id: string }) => {
   const router = useRouter();
@@ -17,9 +18,9 @@ const MindView = ({ id }: { id: string }) => {
           className="flex items-center gap-x-3"
         >
           <IconUtils.Previous/>
-          <h1 className="text-[24px] font-bold">
+          <Typo size="24" bold>
             마음 공유하기
-          </h1>
+          </Typo>
         </button>
       </header>
 

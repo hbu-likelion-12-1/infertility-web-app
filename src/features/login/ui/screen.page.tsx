@@ -6,6 +6,7 @@ import IconUtils from "@/shared/ui/IconUtils";
 import Button from "@/shared/ui/button";
 import { Server } from "@/service/api";
 import useAuth from "@/shared/lib/use-auth.hook";
+import Typo from "@/shared/ui/typography/typo.component";
 
 const LoginScreen = () => {
   const pathname = usePathname();
@@ -32,20 +33,20 @@ const LoginScreen = () => {
   }, []);
 
   return (
-    <article className="flex h-full flex-col px-[45px] justify-center">
+    <article className="FlexCol h-full px-[45px] justify-center">
 
-      <section className="flex flex-col">
+      <section className="FlexCol">
 
         <div className="w-[270px] relative">
-          <h1 className="font-bold text-primary-0 text-[45px]">WeBloom</h1>
+          <Typo size="45" color="primary" bold>WeBloom</Typo>
           <div className="absolute right-0 top-[-35px]">
             <IconUtils.SmallBloom/>
           </div>
         </div>
 
-        <div className="flex flex-col gap-y-1.5 font-bold text-slate-800 text-[20px] pt-[15px]">
-          <span>우리 같이 행복을 꽃 피워요</span>
-          <span>난임 부부 맞춤형 마음 공유 서비스</span>
+        <div className="FlexCol gap-y-1.5 pt-[15px]">
+          <Typo size="21" color="sub" bold>우리 같이 행복을 꽃 피워요</Typo>
+          <Typo size="21" color="sub" bold>난임 부부 맞춤형 마음 공유 서비스</Typo>
         </div>
 
       </section>
@@ -66,9 +67,9 @@ const LoginScreen = () => {
         </Button>
       </section>
 
-      <section className="w-full text-slate-400 text-center pt-[50px] flex flex-col items-center">
-        <span>현재 애플리케이션은 테스트 모드입니다.</span>
-        <span>테스트 계정으로 로그인을 수행할 수 있어요!</span>
+      <section className="w-full text-center pt-[50px] FlexCol items-center">
+        <Typo color="whiteGray">현재 애플리케이션은 테스트 모드입니다.</Typo>
+        <Typo color="whiteGray">테스트 계정으로 로그인을 수행할 수 있어요!</Typo>
 
         <nav className="flex flex-col gap-y-3 w-[200px] pt-[24px]">
           <Button
