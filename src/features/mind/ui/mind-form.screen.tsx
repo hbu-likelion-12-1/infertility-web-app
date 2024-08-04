@@ -5,10 +5,11 @@ import IconUtils from "@/shared/ui/IconUtils";
 import { useRouter } from "next/navigation";
 import clsx from "clsx";
 import useMatchQuery from "@/features/service/query/get-match.query";
-import Radio from "@/shared/ui/radio-button/radio.component";
 import { Emotion } from "@/types/enum";
 import Button from "@/shared/ui/button";
 import { Server } from "@/service/api";
+import Typo from "@/shared/ui/typography/typo.component";
+import EmotionRadioForm from "@/features/mind/ui/emotion-radio.form";
 
 interface MindFormProps {
 }
@@ -56,9 +57,7 @@ const MindFormScreen: React.FC<MindFormProps> = () => {
           className="flex items-center gap-x-3"
         >
           <IconUtils.Previous/>
-          <h1 className="text-[24px] font-bold">
-            마음 공유하기
-          </h1>
+          <Typo size="24" bold>마음 공유하기</Typo>
         </button>
       </header>
 
@@ -69,42 +68,11 @@ const MindFormScreen: React.FC<MindFormProps> = () => {
           "flex flex-col"
         ])}
       >
-        <h1 className="text-[18px] font-bold">현재 본인의 기분을 선택해주세요.</h1>
-
-        <Radio.Provider
-          current={emotion}
-          items={[Emotion.NICE, Emotion.GOOD, Emotion.NORMAL, Emotion.BAD, Emotion.WORST]}
-          setter={v => onChangeEmotion(v as Emotion)}
-        >
-          <nav className="w-full flex gap-x-[18px] pt-[20px]">
-            {/* TODO: ㅋㅋ 하드코딩 수정하기 */}
-            <div className="flex flex-col items-center flex-1">
-              <IconUtils.Happy/>
-              <span className="text-[12px] font-bold pb-2">매우 좋음</span>
-              <Radio.Button item={Emotion.NICE} radioMode/>
-            </div>
-            <div className="flex flex-col items-center flex-1">
-              <IconUtils.Good/>
-              <span className="text-[12px] font-bold pb-2">좋음</span>
-              <Radio.Button item={Emotion.GOOD} radioMode/>
-            </div>
-            <div className="flex flex-col items-center flex-1">
-              <IconUtils.Normal/>
-              <span className="text-[12px] font-bold pb-2">보통</span>
-              <Radio.Button item={Emotion.NORMAL} radioMode/>
-            </div>
-            <div className="flex flex-col items-center flex-1">
-              <IconUtils.Bad/>
-              <span className="text-[12px] font-bold pb-2">나쁨</span>
-              <Radio.Button item={Emotion.BAD} radioMode/>
-            </div>
-            <div className="flex flex-col items-center flex-1">
-              <IconUtils.Worst/>
-              <span className="text-[12px] font-bold pb-2">매우 나쁨</span>
-              <Radio.Button item={Emotion.WORST} radioMode/>
-            </div>
-          </nav>
-        </Radio.Provider>
+        <Typo size="18" bold>현재 본인의 기분을 선택해주세요.</Typo>
+        <EmotionRadioForm
+          emotion={emotion}
+          onChange={onChangeEmotion}
+        />
       </section>
 
       <div className="pb-[20px]"/>
@@ -115,14 +83,14 @@ const MindFormScreen: React.FC<MindFormProps> = () => {
           "flex flex-col"
         ])}
       >
-        <h1 className="text-[18px] font-bold pb-4">{matchDetails.question.content}</h1>
+        <Typo size="18" bold className="pb-4">{matchDetails.question.content}</Typo>
 
         <div className="w-full flex flex-col">
           <textarea
             value={content}
             onChange={onEnterContent}
             className={clsx([
-              "w-full min-h-[250px] p-[24px]",
+              "w-full min-h-[250px] p-[24px] text-black",
               "rounded-xl resize-none"
             ])}
             placeholder="최대 200자 입력 가능합니다."

@@ -1,6 +1,7 @@
-export type TypoSize = "14" | "18" | "21" | "24" | "32" | "45";
+export type TypoSize = "12" | "14" | "18" | "21" | "24" | "32" | "45";
 
 export const TypoSizeDict: Record<TypoSize, string> = {
+  12: "text-[12px]",
   14: "text-[14px]",
   18: "text-[18px]",
   21: "text-[21px]",
