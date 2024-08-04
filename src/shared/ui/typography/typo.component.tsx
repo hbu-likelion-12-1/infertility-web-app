@@ -7,12 +7,14 @@ import { getTypoColor, getTypoSize } from "@/shared/ui/typography/lib/getter";
 interface CommonTypographyProps extends HTMLAttributes<HTMLSpanElement> {
   size?: TypoSize;
   color?: TypoColor;
+  bold?: boolean;
 }
 
 const Typo: React.FC<CommonTypographyProps> = ({
                                                  size = "18",
                                                  color = "black",
                                                  className,
+                                                 bold = false,
                                                  children,
                                                  ...props
                                                }) => {
@@ -22,6 +24,7 @@ const Typo: React.FC<CommonTypographyProps> = ({
         getTypoSize(size),
         getTypoColor(color),
         className,
+        bold && "font-bold",
       ])}
       {...props}
     >
