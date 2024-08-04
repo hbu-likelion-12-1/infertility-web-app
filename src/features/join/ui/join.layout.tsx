@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { Server } from "@/service/api";
 import { SignupForm } from "@/features/join/constants/types";
 import useAuth from "@/shared/lib/use-auth.hook";
+import Typo from "@/shared/ui/typography/typo.component";
 
 interface Props {
   title: string;
@@ -42,11 +43,9 @@ const JoinLayout: React.FC<Props> = ({
   };
 
   return (
-    <article
-      className="w-full min-h-full px-[12px] overflow-y-scroll overflow-x-hidden"
-    >
-      <section className="pb-[50px] text-[20px] w-full text-center pt-[23px] font-bold">
-        <span>{title}</span>
+    <article className="PageLayout">
+      <section className="pb-[50px] w-full text-center pt-[23px]">
+        <Typo size="21" bold>{title}</Typo>
       </section>
 
       <div className={className}>

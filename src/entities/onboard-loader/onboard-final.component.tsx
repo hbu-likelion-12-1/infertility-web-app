@@ -2,6 +2,7 @@ import React from 'react';
 import IconUtils from "@/shared/ui/IconUtils";
 import Announcer from "./announcer.component";
 import { OnBoardPhase } from "@/entities/onboard-loader/constants/enum";
+import Typo from "@/shared/ui/typography/typo.component";
 
 const OnboardFinal = () => {
   return (
@@ -17,10 +18,10 @@ const OnboardFinal = () => {
         totalSteps={4}  // 전체 단계를 나타내는 prop 추가
       >
         <section className="flex flex-col text-center text-[20px] py-[40px] text-black">
-          <h3 className="text-[#111111] font-[500]">지금 바로 가입하고,</h3>
-          <h3 className="text-primary-0 font-[500]">AI Bloom과 함께</h3>
-          <h3 className="text-primary-0 font-[500]">난임 극복을 위한 여정에</h3>
-          <h3 className="text-primary-0 font-[500]">행복한 꽃을 피워요!</h3>
+          <Typo>지금 바로 가입하고,</Typo>
+          <Typo>AI Bloom과 함께</Typo>
+          <Typo>난임 극복을 위한 여정에</Typo>
+          <Typo>행복한 꽃을 피워요!</Typo>
         </section>
       </Announcer>
     </div>

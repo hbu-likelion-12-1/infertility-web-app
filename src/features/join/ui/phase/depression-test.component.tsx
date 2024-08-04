@@ -6,6 +6,7 @@ import JoinLayout from "@/features/join/ui/join.layout";
 import { JoinPhase } from "@/features/join/constants/enum";
 import DepressionItem from "@/features/join/ui/phase/depression-item.component";
 import { DepressionQueries } from "@/features/join/constants/constant";
+import Typo from "@/shared/ui/typography/typo.component";
 
 
 const DepressionTest = () => {
@@ -40,7 +41,7 @@ const DepressionTest = () => {
       ])}>
         {DepressionQueries.map((query, index) => (
           <section className="flex flex-col gap-y-[14px]" key={query}>
-            <span className="text-[16px]">{query}</span>
+            <Typo size="16">{query}</Typo>
             <DepressionItem setter={v => onChangeTestOption(v, index)}/>
           </section>
         ))}

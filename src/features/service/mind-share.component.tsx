@@ -4,6 +4,7 @@ import clsx from "clsx";
 import IconUtils from "@/shared/ui/IconUtils";
 import { useRouter } from "next/navigation";
 import useAuth from "@/shared/lib/use-auth.hook";
+import Typo from "@/shared/ui/typography/typo.component";
 
 
 const MindShareInteraction = () => {
@@ -32,7 +33,7 @@ const MindShareInteraction = () => {
   return (
     <nav className="flex flex-col gap-y-[24px]">
       <article className="flex flex-col gap-y-3">
-        <h3 className="text-[18px] font-bold">아내</h3>
+        <Typo size="18" bold>아내</Typo>
         <button
           onClick={onClickWifeMind}
           className={clsx([
@@ -49,7 +50,7 @@ const MindShareInteraction = () => {
       </article>
 
       <article className="flex flex-col gap-y-3">
-        <h3 className="text-[18px] font-bold">남편</h3>
+        <Typo size="18" bold>남편</Typo>
         <button
           onClick={onClickHusbandMind}
           className={clsx([

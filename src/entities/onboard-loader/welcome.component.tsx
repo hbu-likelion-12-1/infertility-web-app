@@ -2,6 +2,7 @@ import React from 'react';
 import IconUtils from "@/shared/ui/IconUtils";
 import Announcer from "./announcer.component";
 import { OnBoardPhase } from "@/entities/onboard-loader/constants/enum";
+import Typo from "@/shared/ui/typography/typo.component";
 
 const OnboardWelcome = () => {
   return (
@@ -15,11 +16,11 @@ const OnboardWelcome = () => {
         currentStep={0} // 현재 단계를 나타내는 prop 추가
         totalSteps={4}  // 전체 단계를 나타내는 prop 추가
       >
-        <section className="flex flex-col text-center text-[20px] py-[40px] ">
-          <h3 className="text-black font-[500]">안녕하세요!</h3>
-          <h3 className="text-primary-0 font-[500]">AI 기반</h3>
-          <h3 className="text-primary-0 font-[500]">난임 부부 맞춤형 마음 공유 서비스</h3>
-          <h3 className="text-primary-0 font-[500]">WEBLOOM 에 오신 것을 환영합니다.</h3>
+        <section className="FlexCol text-center py-[40px]">
+          <Typo size="21" bold>안녕하세요!</Typo>
+          <Typo size="21" bold>AI 기반</Typo>
+          <Typo size="21" bold>난임 부부 맞춤형 마음 공유 서비스</Typo>
+          <Typo size="21" bold>WeBloom 에 오신 것을 환영합니다.</Typo>
         </section>
       </Announcer>
     </div>

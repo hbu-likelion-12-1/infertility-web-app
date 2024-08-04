@@ -1,6 +1,6 @@
 import React from 'react';
-import clsx from "clsx";
 import useAuth from "@/shared/lib/use-auth.hook";
+import Typo from "@/shared/ui/typography/typo.component";
 
 interface Props {
   code: string;
@@ -29,15 +29,13 @@ const InviteCode: React.FC<Props> = ({ code }) => {
   };
 
   return (
-    <span
-      className={clsx([
-        "underline text-primary-0",
-        "cursor-pointer",
-      ])}
+    <Typo
+      color="primary"
+      className="underline cursor-pointer"
       onClick={onClickLink}
     >
       {code}
-    </span>
+    </Typo>
   );
 };
 
