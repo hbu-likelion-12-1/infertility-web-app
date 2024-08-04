@@ -6,6 +6,7 @@ import clsx from "clsx";
 import Button from "@/shared/ui/button";
 import getDepressionResult from "@/shared/lib/depression";
 import { useRouter } from "next/navigation";
+import Typo from "@/shared/ui/typography/typo.component";
 
 const JoinResult = () => {
   const { depressionScore } = useJoinStore();
@@ -17,12 +18,12 @@ const JoinResult = () => {
   return (
     <article className={clsx([
       "w-full h-full px-[12px]",
-      "flex flex-col items-center",
+      "FlexCol items-center",
     ])}>
-      <h1 className="font-bold text-[20px] pt-[56px] pb-[68px]">우울증 테스트 결과</h1>
+      <Typo size="21" bold className="pt-[56px] pb-[68px]">우울증 테스트 결과</Typo>
 
       <section>
-        <h3 className="text-primary-0 text-[36px] font-bold">{depressionScore}점</h3>
+        <Typo size="32" color="primary" bold>{depressionScore}점</Typo>
       </section>
 
       <nav className="w-full flex justify-center px-[32px] pt-[60px]">
@@ -31,8 +32,8 @@ const JoinResult = () => {
           "shadow-card w-full py-[28px] px-[32px]",
           "rounded-[14px] border border-gray-100",
         ])}>
-          <h4 className="text-[18px] font-bold text-primary-0 pb-[12px]">{title}</h4>
-          <span className="text-[16px] w-3/4">{content}</span>
+          <Typo size="18" color="primary" bold className="pb-[12px]">{title}</Typo>
+          <Typo size="16" className="w-3/4">{content}</Typo>
         </section>
       </nav>
 

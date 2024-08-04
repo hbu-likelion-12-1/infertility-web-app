@@ -6,6 +6,7 @@ import AppLoading from "@/shared/ui/loading/loading.component";
 import Button from "@/shared/ui/button";
 import useMatchQuery from "@/features/service/query/get-match.query";
 import { Server } from "@/service/api";
+import Typo from "@/shared/ui/typography/typo.component";
 
 
 const BloomReport = () => {
@@ -46,9 +47,9 @@ const BloomReport = () => {
   return (
     <>
       <header className="w-full items-center flex py-[16px] mb-[21px] my-[16px] justify-between">
-        <h1 className="text-[24px] font-bold">
+        <Typo size="24" bold>
           Bloom의 응원과 조언
-        </h1>
+        </Typo>
         <Button onClick={onClickGenerateNextQuestion}>
           다음 질문 생성
         </Button>
@@ -62,17 +63,16 @@ const BloomReport = () => {
         ])}
       >
         {paragraphs.map((p, i) => (
-          <span className="text-[16px] leading-6" key={i}>
+          <Typo size="16" className="leading-6" key={i}>
             {p}
-          </span>
+          </Typo>
         ))}
       </section>
 
       <header className="w-full h-[42px] flex flex-col py-[16px] mb-[21px] my-[16px]">
-        <h1 className="text-[24px] font-bold">
+        <Typo size="24" bold>
           주간 부부 감정 추이
-        </h1>
-
+        </Typo>
         <img src="/images/report.png"/>
       </header>
     </>

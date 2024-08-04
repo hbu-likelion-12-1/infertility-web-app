@@ -44,9 +44,9 @@ const MindBothViewer = ({ questionId }: { questionId: string }) => {
           className="flex items-center gap-x-3"
         >
           <IconUtils.Previous/>
-          <h1 className="text-[24px] font-bold">
+          <Typo size="24" bold>
             마음 공유 보관함
-          </h1>
+          </Typo>
         </button>
       </header>
 

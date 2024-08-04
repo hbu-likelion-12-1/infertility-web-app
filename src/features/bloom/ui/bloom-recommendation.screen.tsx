@@ -1,6 +1,7 @@
 import React from 'react';
 import useAuth from "@/shared/lib/use-auth.hook";
 import IconUtils from "@/shared/ui/IconUtils";
+import Typo from "@/shared/ui/typography/typo.component";
 
 const BloomRecommendation = () => {
   const { user } = useAuth();
@@ -8,14 +9,14 @@ const BloomRecommendation = () => {
   if (!user) return null;
 
   return (
-    <article className="w-full flex flex-col h-full overflow-y-scroll overflow-x-hidden">
-      <h1 className="text-[24px] font-bold mt-[32px]">Bloom이 추천해요!</h1>
+    <article className="PageLayout">
+      <Typo size="24" bold className="mt-[32px]">Bloom이 추천해요!</Typo>
       <section
-        className="pt-[30px] h-[142px] flex flex-col text-[24px] w-full relative text-slate-700 justify-end">
-        <span className="text-black">{user.username}님,</span>
+        className="pt-[30px] h-[142px] FlexCol w-full relative justify-end">
+        <Typo size="24" className="text-black">{user.username}님,</Typo>
 
         <section>
-          <span className="text-black">이번 주말 {user.sex === "F" ? "남편과" : "아내와"} 산책 어떠세요?</span>
+          <Typo size="24">이번 주말 {user.sex === "F" ? "남편과" : "아내와"} 산책 어떠세요?</Typo>
           <div className="absolute right-0 top-[-15px]">
             <IconUtils.BigFlower/>
           </div>
@@ -25,7 +26,7 @@ const BloomRecommendation = () => {
       </section>
 
       <section className="flex flex-col">
-        <span className="text-[18px] text-black font-bold pb-4">내 주변 산책로</span>
+        <Typo size="18" className="pb4" bold>내 주변 산책로</Typo>
 
         <nav className="flex gap-x-[18px]">
           <article
