@@ -13,11 +13,11 @@ const Storage: React.FC<Props> = ({ data }) => {
   const router = useRouter();
 
   const onClickStorage = (questionId: string) =>
-    router.push(`/mind/both/${questionId}`)
+    router.push(`/service/mind/both/${questionId}`)
 
   return (
     <button
-      onClick={() => onClickStorage(id)}
+      onClick={() => onClickStorage(String(id))}
       className={clsx([
         "w-full p-[24px]",
         "flex justify-between shadow-card",
