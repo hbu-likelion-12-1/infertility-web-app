@@ -29,6 +29,7 @@ import Bad from "../../../public/icon/mood/bad.svg";
 import Worst from "../../../public/icon/mood/verybad.svg";
 
 import VoiceComplete from "../../../public/icon/voice-complete.svg";
+import VoiceReceived from "../../../public/icon/voice-recieved.svg";
 import VoiceReady from "../../../public/icon/voice-ready.svg";
 import Geo from "../../../public/icon/geo.svg";
 
@@ -56,7 +57,7 @@ const IconUtils = {
   ActiveRadio,
   DeActiveRadio,
   Happy, Good, Normal, Bad, Worst,
-  VoiceReady, VoiceComplete,
+  VoiceReady, VoiceComplete, VoiceReceived,
   Geo,
 };
 

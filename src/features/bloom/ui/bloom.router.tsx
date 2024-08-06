@@ -10,7 +10,7 @@ const BloomRouter = () => {
   const [tab, setTab] = useState(BloomTab.REPORT);
 
   return (
-    <article className="w-full h-full flex flex-col px-[20px]">
+    <article className="PageLayout px-[20px]">
       <section className="w-full h-[48px] flex">
         <button
           onClick={() => setTab(BloomTab.REPORT)}

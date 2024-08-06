@@ -4,10 +4,10 @@ import { toCamel, toSnake } from 'snake-camel';
 const baseURL: string = process.env.NEXT_PUBLIC_SERVER_ENDPOINT as string;
 export const apiClient = axios.create({
   baseURL,
-  timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
   },
+  timeout: 10000,
 });
 
 apiClient.interceptors.request.use((req) => {
