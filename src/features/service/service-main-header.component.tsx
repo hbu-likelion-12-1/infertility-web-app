@@ -43,7 +43,7 @@ const ServiceMainHeader = () => {
         ])}
       >
         <Typo size="14">오늘의 마음 공유 질문</Typo>
-        <Typo size="18" className="pt-[20px]" bold>{matchDetails?.question.content}</Typo>
+        <Typo size="18" className="pt-[20px]" bold>{matchDetails?.question?.content}</Typo>
         <div className="right-0 top-[-84px] absolute">
           <IconUtils.BigFlower/>
         </div>

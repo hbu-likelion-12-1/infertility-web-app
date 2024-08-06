@@ -83,7 +83,7 @@ const MindFormScreen: React.FC<MindFormProps> = () => {
           "flex flex-col"
         ])}
       >
-        <Typo size="18" bold className="pb-4">{matchDetails.question.content}</Typo>
+        <Typo size="18" bold className="pb-4">{matchDetails.question?.content}</Typo>
 
         <div className="w-full flex flex-col">
           <textarea

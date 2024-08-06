@@ -15,7 +15,7 @@ const BloomReport = () => {
 
   const paragraphs = (() => {
     if (!bloom?.feedback?.content) return ["현재 피드백이 존재하지 않습니다."];
-    const feedback: string = bloom.feedback.content
+    const feedback: string = bloom.feedback?.content
       .replaceAll("*", "")
       .replaceAll("---", "")
       .replaceAll("#", "");
