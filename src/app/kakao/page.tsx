@@ -38,8 +38,7 @@ const KakaoCallbackPage = () => {
     })();
   }, [login, router, searchParams]);
 
-  return (
-    <AppLoading/>
+  return <AppLoading/>;
 };
 
 export default KakaoCallbackPage;
