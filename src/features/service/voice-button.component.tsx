@@ -19,14 +19,14 @@ const VoiceButton: React.FC<ButtonProps> = ({ question, target }) => {
   const [playUrl, setPlayUrl] = useState<string>();
   const sameTarget = user?.sex === target;
 
-  const url = target === "F" ? question.femaleAudioUrl : question.maleAudioUrl;
+  const url = target === "F" ? question?.femaleAudioUrl : question?.maleAudioUrl;
   console.log(`url: ${url}`);
   const isMyUploaded = (() => {
-    return user?.sex === target && !!question.femaleAudioUrl;
+    return user?.sex === target && !!question?.femaleAudioUrl;
   })();
   const isOppositeUploaded = (() => {
-    if (target === "F" && !!question.femaleAudioUrl) return true;
-    if (target === "M" && !!question.maleAudioUrl) return true;
+    if (target === "F" && !!question?.femaleAudioUrl) return true;
+    if (target === "M" && !!question?.maleAudioUrl) return true;
     return false;
   })();
 

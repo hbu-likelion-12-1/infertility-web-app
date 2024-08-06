@@ -10,8 +10,8 @@ interface Props {
 
 const VoiceShareInteraction: React.FC<Props> = ({ match }) => {
   const { user } = useAuth();
-  const husbandUploaded = !!match.question.maleAudioUrl;
-  const wifeUploaded = !!match.question.femaleAudioUrl;
+  const husbandUploaded = !!match.question?.maleAudioUrl;
+  const wifeUploaded = !!match.question?.femaleAudioUrl;
 
   const onClickReady = () => alert("준비 중입니다.");
 
