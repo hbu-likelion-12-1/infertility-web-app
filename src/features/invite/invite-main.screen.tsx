@@ -7,7 +7,7 @@ import AppLoading from "@/shared/ui/loading/loading.component";
 import Button from "@/shared/ui/button";
 import InviteCode from "@/features/invite/code.component";
 import clsx from "clsx";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import useMatchQuery from "@/features/service/query/get-match.query";
 import Typo from "@/shared/ui/typography/typo.component";
 
@@ -15,6 +15,19 @@ const InviteMain = () => {
   const { data: inviteCode, isFetched, refetch } = useInviteCodeQuery();
   const { data: matchDetails } = useMatchQuery();
   const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const onMatch = async (code: string) => {
+    try {
+      await Server.Match.create(code.trim());
+      alert("배우자와 매칭이 수행되었습니다.");
+      router.push("/service");
+    } catch (error: any) {
+      if (error.code === 404) {
+        return alert("존재하지 않는 매칭코드입니다.");
+      }
+    }
+  };
 
   useEffect(() => {
     if (!isFetched) return;
@@ -32,6 +45,13 @@ const InviteMain = () => {
       router.push("/service");
     }
   }, [matchDetails]);
+
+  useEffect(() => {
+    if (!searchParams) return;
+    const code = searchParams.get("code");
+    if (!code) return;
+    onMatch(code);
+  }, [searchParams]);
 
   if (!inviteCode) return <AppLoading/>;
 
